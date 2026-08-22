@@ -8,6 +8,10 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 import deskCrtSetup from "@/assets/desk-crt-setup.png";
+import workBrand from "@/assets/work-brand.jpg";
+import workDigital from "@/assets/work-digital.jpg";
+import workClient from "@/assets/work-client.jpg";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
