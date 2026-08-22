@@ -36,7 +36,7 @@ const categories = [
     id: "brand-systems",
     label: "Brand Systems",
     color: "bg-sticky-blue",
-    position: { left: "70.5%", top: "9%", rotate: "3deg" },
+    position: { left: "68%", top: "11%", rotate: "3deg" },
     projects: [
       {
         title: "Nova Studios Identity",
@@ -59,7 +59,7 @@ const categories = [
     id: "digital-products",
     label: "Digital Products",
     color: "bg-sticky-yellow",
-    position: { left: "23.5%", top: "75.5%", rotate: "-4deg" },
+    position: { left: "25%", top: "74%", rotate: "-4deg" },
     projects: [
       {
         title: "Lumen Dashboard",
@@ -82,7 +82,7 @@ const categories = [
     id: "client-work",
     label: "Client Work",
     color: "bg-sticky-pink",
-    position: { left: "67.5%", top: "78.5%", rotate: "2deg" },
+    position: { left: "67%", top: "77%", rotate: "2deg" },
     projects: [
       {
         title: "Bloom Editorial",
