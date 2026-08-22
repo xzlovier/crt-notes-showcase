@@ -170,37 +170,37 @@
 @utility crt-scanlines {
   position: relative;
   overflow: hidden;
-}
 
-@utility crt-scanlines::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 10;
-  background: repeating-linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 0.12) 0px,
-    rgba(0, 0, 0, 0.12) 1px,
-    transparent 1px,
-    transparent 4px
-  );
-  opacity: 0.35;
-  mix-blend-mode: multiply;
-  animation: scanline-drift 18s linear infinite;
-}
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 10;
+    background: repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.12) 0px,
+      rgba(0, 0, 0, 0.12) 1px,
+      transparent 1px,
+      transparent 4px
+    );
+    opacity: 0.35;
+    mix-blend-mode: multiply;
+    animation: scanline-drift 18s linear infinite;
+  }
 
-@utility crt-scanlines::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 11;
-  background: radial-gradient(
-    ellipse at center,
-    transparent 0%,
-    rgba(0, 0, 0, 0.35) 100%
-  );
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 11;
+    background: radial-gradient(
+      ellipse at center,
+      transparent 0%,
+      rgba(0, 0, 0, 0.35) 100%
+    );
+  }
 }
 
 @utility crt-glow {
@@ -225,12 +225,12 @@
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   transform-origin: center center;
-}
 
-@utility sticky-note:hover {
-  transform: translateY(-10px) rotate(2deg) scale(1.05);
-  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.22);
-  z-index: 20;
+  &:hover {
+    transform: translateY(-10px) rotate(2deg) scale(1.05);
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.22);
+    z-index: 20;
+  }
 }
 
 @utility neon-glow {
