@@ -286,7 +286,7 @@ function Index() {
                   <div
                     className={`grid transition-[grid-template-rows] duration-500 ease-out ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}
                   >
-                    <div className="overflow-hidden">
+                    <div className="min-h-0 overflow-hidden">
                       <div className="space-y-3 rounded-xl bg-card/95 p-3 md:p-4">
                         {category.projects.map((project) => (
                           <button
@@ -315,16 +315,6 @@ function Index() {
                       </div>
                     </div>
                   </div>
-                  {!isOpen && (
-                    <div className="flex h-16 items-end justify-between px-4 pb-3 md:h-20">
-                      <span className="font-serif text-base italic text-crt-dark/80 md:text-lg">
-                        {category.projects.length} projects
-                      </span>
-                      <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-crt-dark/60">
-                        Open folder
-                      </span>
-                    </div>
-                  )}
                 </div>
               </div>
             );
