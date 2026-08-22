@@ -161,7 +161,7 @@ function Index() {
               style={{
                 left: category.position.left,
                 top: category.position.top,
-                transform: `rotate(${category.position.rotate})`,
+                rotate: category.position.rotate,
               }}
               aria-label={`Open ${category.label} projects`}
             >
