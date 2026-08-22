@@ -36,7 +36,7 @@ const categories = [
     id: "brand-systems",
     label: "Brand Systems",
     color: "bg-sticky-blue",
-    position: { left: "68%", top: "11%", rotate: "3deg" },
+    position: { left: "62%", top: "9%", rotate: "3deg" },
     projects: [
       {
         title: "Nova Studios Identity",
@@ -59,7 +59,7 @@ const categories = [
     id: "digital-products",
     label: "Digital Products",
     color: "bg-sticky-yellow",
-    position: { left: "25%", top: "74%", rotate: "-4deg" },
+    position: { left: "21%", top: "67%", rotate: "-4deg" },
     projects: [
       {
         title: "Lumen Dashboard",
@@ -82,7 +82,7 @@ const categories = [
     id: "client-work",
     label: "Client Work",
     color: "bg-sticky-pink",
-    position: { left: "67%", top: "77%", rotate: "2deg" },
+    position: { left: "62%", top: "67%", rotate: "2deg" },
     projects: [
       {
         title: "Bloom Editorial",
@@ -133,10 +133,10 @@ function Index() {
           <div
             className="crt-scanlines crt-glow animate-soft-flicker absolute flex flex-col items-center justify-center bg-crt-dark"
             style={{
-              left: "27.5%",
-              top: "13.5%",
-              width: "45%",
-              height: "56.5%",
+              left: "28%",
+              top: "13%",
+              width: "44%",
+              height: "62%",
             }}
           >
             <div className="z-20 flex flex-col items-center gap-3 px-4 text-center md:gap-4">
