@@ -287,7 +287,8 @@
 }
 
 @utility neon-glow {
-  text-shadow: 0 0 10px var(--neon-green), 0 0 24px rgba(74, 255, 128, 0.6);
+  text-shadow: 0 0 10px color-mix(in oklab, var(--neon-green) 80%, transparent),
+    0 0 28px color-mix(in oklab, var(--sticky-pink) 60%, transparent);
 }
 
 @keyframes scanline-drift {
