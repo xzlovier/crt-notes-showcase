@@ -216,7 +216,7 @@ function Index() {
             <button
               key={category.id}
               onClick={() => openCategory(category.id)}
-              className={`sticky-note ${category.color}`}
+              className={`sticky-note ${category.color} ${category.tabText}`}
               style={{
                 left: category.position.left,
                 top: category.position.top,
