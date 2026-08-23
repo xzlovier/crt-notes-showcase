@@ -194,7 +194,7 @@ function Index() {
   return (
     <main className="riso-grain min-h-screen bg-background overflow-hidden">
       {/* Hero: CRT workspace */}
-      <section className="code-texture relative flex flex-col justify-center w-full px-2 pt-8 pb-4 md:min-h-screen md:px-8 lg:px-12 lg:pb-48">
+      <section className="code-texture relative flex flex-col justify-center w-full px-4 pt-12 pb-16 md:min-h-screen md:px-8 lg:px-12 lg:pb-48">
         
         {/* Pixel Folders scattered in background */}
         {pixelFolders.map((pf, i) => (
@@ -212,55 +212,11 @@ function Index() {
             }}
           />
         ))}
-
-        {/* Mobile Hero (Hidden on Desktop) */}
-        <div className="md:hidden flex flex-col gap-6 items-center w-full relative z-10">
-          {/* Terminal Box */}
-          <div className="w-full bg-crt-dark rounded-xl border-2 border-neon-green/30 p-6 shadow-2xl relative overflow-hidden">
-            <div className="crt-scanlines pointer-events-none absolute inset-0 opacity-50"></div>
-            <div className="relative z-10 flex flex-col gap-3">
-              <span className="font-serif text-[10px] font-medium uppercase tracking-[0.3em] text-neon-green/80">
-                Design Portfolio
-              </span>
-              <h1 className="font-serif text-3xl font-bold uppercase leading-[1.1] tracking-tight text-neon-green neon-glow">
-                how i<br/>ORGANIZE
-              </h1>
-              <p className="font-sans text-sm font-light leading-relaxed text-foreground/85 mt-1">
-                projects, content, client work
-              </p>
-            </div>
-          </div>
-          
-          {/* Sticky Notes Grid */}
-          <div className="grid grid-cols-2 gap-4 w-full">
-            {categories.map((category, index) => (
-              <button
-                key={category.id + '-mobile'}
-                onClick={() => openCategory(category.id)}
-                className={`flex aspect-square w-full flex-col items-center justify-center p-4 text-center font-sans font-semibold leading-tight shadow-md transition-transform hover:-translate-y-1 ${category.color} ${category.tabText}`}
-                style={{
-                  rotate: index % 2 === 0 ? "-2deg" : "3deg",
-                }}
-              >
-                <span className="text-[clamp(0.85rem,4vw,1rem)]">{category.label}</span>
-              </button>
-            ))}
-          </div>
-
-          <button
-            onClick={scrollToProjects}
-            className="mt-2 rounded-full border border-neon-green/50 bg-sticky-pink px-6 py-3 font-serif text-[10px] font-bold uppercase tracking-[0.2em] text-background transition-transform active:scale-95"
-          >
-            Scroll to Explore
-          </button>
-        </div>
-
-        {/* Desktop Hero (Hidden on Mobile) */}
-        <div className="hidden md:block relative z-10 mx-auto aspect-[16/10] w-full max-w-[1400px] @container">
+        <div className="relative z-10 mx-auto aspect-video w-full max-w-[1400px] @container" style={{ aspectRatio: "1024/571" }}>
           <img
             src={realisticPcImage}
             alt="Retro beige CRT monitor on a clean wooden desk with colorful sticky notes"
-            className="absolute inset-0 h-full w-full object-contain"
+            className="absolute inset-0 h-full w-full object-cover"
             loading="eager"
             decoding="async"
           />
@@ -300,7 +256,7 @@ function Index() {
 
           {categories.map((category) => (
             <button
-              key={category.id + '-desktop'}
+              key={category.id}
               onClick={() => openCategory(category.id)}
               className={`sticky-note ${category.color} ${category.tabText}`}
               style={{
@@ -311,7 +267,7 @@ function Index() {
               }}
               aria-label={`Open ${category.label} projects`}
             >
-              <span className="font-sans font-semibold leading-tight text-[clamp(0.6rem,1.2vw,0.85rem)]">
+              <span className="font-sans font-semibold leading-tight">
                 {category.label}
               </span>
             </button>
@@ -319,7 +275,7 @@ function Index() {
 
           <button
             onClick={scrollToProjects}
-            className="absolute bottom-[5%] left-1/2 z-20 -translate-x-1/2 rounded-full border border-neon-green/50 bg-sticky-pink md:px-3 md:py-1.5 lg:px-4 lg:py-2 font-serif md:text-[10px] lg:text-xs font-bold uppercase tracking-[0.2em] text-background transition-transform duration-300 hover:scale-110"
+            className="absolute bottom-[5%] left-1/2 z-20 -translate-x-1/2 rounded-full border border-neon-green/50 bg-sticky-pink px-2 py-1 md:px-3 md:py-1.5 lg:px-4 lg:py-2 font-serif text-[6px] md:text-[10px] lg:text-xs font-bold uppercase tracking-[0.2em] text-background transition-transform duration-300 hover:scale-110"
           >
             Scroll to Explore
           </button>
@@ -327,7 +283,7 @@ function Index() {
       </section>
 
       {/* Big Background Folder (About Me) */}
-      <section className="mx-auto max-w-5xl px-2 pt-0 pb-12 -mt-4 md:mt-0 md:px-4 md:py-24">
+      <section className="mx-auto max-w-5xl px-4 py-8 md:py-24">
         <div className="relative group transition-transform duration-500 ease-out hover:-translate-y-2">
           
           {/* Big Folder Tab */}
