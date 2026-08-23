@@ -266,13 +266,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
-  width: 9rem;
+  padding: min(2vw, 1rem);
+  width: min(20vw, 9rem);
   aspect-ratio: 1 / 1;
   text-align: center;
   font-weight: 600;
-  font-size: 0.875rem;
-  line-height: 1.25;
+  font-size: min(2.5vw, 0.875rem);
+  line-height: 1.1;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;

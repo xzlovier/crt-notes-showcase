@@ -184,11 +184,11 @@ function Index() {
   };
 
   const pixelFolders = [
-    { left: "10%", top: "12%", rotate: "-8deg", width: "w-20 md:w-28", delay: "0s" },
-    { left: "85%", top: "18%", rotate: "12deg", width: "w-16 md:w-24", delay: "0.2s" },
-    { left: "6%", top: "60%", rotate: "6deg", width: "w-24 md:w-32", delay: "0.4s" },
-    { left: "88%", top: "68%", rotate: "-15deg", width: "w-20 md:w-28", delay: "0.1s" },
-    { left: "68%", top: "8%", rotate: "5deg", width: "w-14 md:w-20", delay: "0.3s" },
+    { left: "10%", top: "12%", rotate: "-8deg", width: "w-12 md:w-20 lg:w-28", delay: "0s" },
+    { left: "85%", top: "18%", rotate: "12deg", width: "w-10 md:w-16 lg:w-24", delay: "0.2s" },
+    { left: "6%", top: "60%", rotate: "6deg", width: "w-16 md:w-24 lg:w-32", delay: "0.4s" },
+    { left: "88%", top: "68%", rotate: "-15deg", width: "w-12 md:w-20 lg:w-28", delay: "0.1s" },
+    { left: "68%", top: "8%", rotate: "5deg", width: "w-8 md:w-14 lg:w-20", delay: "0.3s" },
   ];
 
   return (
@@ -212,7 +212,7 @@ function Index() {
             }}
           />
         ))}
-        <div className="relative z-10 mx-auto aspect-video w-full max-w-[1400px]" style={{ aspectRatio: "1024/571" }}>
+        <div className="relative z-10 mx-auto aspect-video w-full max-w-[1400px] @container" style={{ aspectRatio: "1024/571" }}>
           <img
             src={realisticPcImage}
             alt="Retro beige CRT monitor on a clean wooden desk with colorful sticky notes"
@@ -225,14 +225,14 @@ function Index() {
             className="crt-scanlines crt-glow animate-soft-flicker absolute flex flex-col items-center justify-center bg-crt-dark"
             style={{ left: "27.5%", top: "17.5%", width: "44.5%", height: "52.5%" }}
           >
-            <div className="z-20 flex flex-col items-center gap-3 px-4 text-center md:gap-4">
-              <span className="font-serif text-[10px] font-medium uppercase tracking-[0.35em] text-neon-green/80 md:text-xs lg:text-sm">
+            <div className="z-20 flex flex-col items-center gap-1 md:gap-3 px-2 md:px-4 text-center">
+              <span className="font-serif text-[1.5cqw] md:text-[10px] lg:text-xs font-medium uppercase tracking-[0.35em] text-neon-green/80">
                 Design Portfolio
               </span>
-              <h1 className="font-serif text-3xl font-bold uppercase leading-[0.95] tracking-tight text-neon-green neon-glow md:text-5xl lg:text-6xl">
+              <h1 className="font-serif text-[4cqw] md:text-3xl lg:text-5xl font-bold uppercase leading-[0.95] tracking-tight text-neon-green neon-glow">
                 how i ORGANIZE
               </h1>
-              <p className="max-w-[22ch] font-sans text-sm font-light leading-snug tracking-wide text-foreground/85 md:text-base lg:text-lg">
+              <p className="max-w-[22ch] font-sans text-[2cqw] md:text-sm lg:text-base font-light leading-snug tracking-wide text-foreground/85">
                 projects, content, client work
               </p>
             </div>
@@ -267,7 +267,7 @@ function Index() {
               }}
               aria-label={`Open ${category.label} projects`}
             >
-              <span className="font-sans text-sm font-semibold leading-tight md:text-base">
+              <span className="font-sans font-semibold leading-tight">
                 {category.label}
               </span>
             </button>
@@ -275,7 +275,7 @@ function Index() {
 
           <button
             onClick={scrollToProjects}
-            className="absolute bottom-[5%] left-1/2 z-20 -translate-x-1/2 rounded-full border border-neon-green/50 bg-sticky-pink px-3 py-1.5 font-serif text-[10px] font-bold uppercase tracking-[0.2em] text-background transition-transform duration-300 hover:scale-110 md:px-4 md:py-2 md:text-xs"
+            className="absolute bottom-[5%] left-1/2 z-20 -translate-x-1/2 rounded-full border border-neon-green/50 bg-sticky-pink px-2 py-1 md:px-3 md:py-1.5 lg:px-4 lg:py-2 font-serif text-[6px] md:text-[10px] lg:text-xs font-bold uppercase tracking-[0.2em] text-background transition-transform duration-300 hover:scale-110"
           >
             Scroll to Explore
           </button>
