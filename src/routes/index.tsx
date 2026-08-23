@@ -58,7 +58,7 @@ const categories: Category[] = [
     id: "digital-products",
     label: "Digital Products",
     color: "bg-sticky-blue",
-    tabText: "text-crt-dark",
+    tabText: "text-white",
     position: { left: "21%", top: "67%", rotate: "-4deg" },
     projects: [
       {
@@ -94,7 +94,7 @@ const categories: Category[] = [
     id: "client-work",
     label: "Client Work",
     color: "bg-sticky-pink",
-    tabText: "text-crt-dark",
+    tabText: "text-background",
     position: { left: "62%", top: "67%", rotate: "2deg" },
     projects: [
       {
@@ -130,7 +130,7 @@ const categories: Category[] = [
     id: "brand-systems",
     label: "Brand Systems",
     color: "bg-sticky-yellow",
-    tabText: "text-crt-dark",
+    tabText: "text-background",
     position: { left: "62%", top: "9%", rotate: "3deg" },
     projects: [
       {
@@ -181,10 +181,10 @@ function Index() {
   };
 
   return (
-    <main className="min-h-screen bg-background">
+    <main className="riso-grain min-h-screen bg-background">
       {/* Hero: CRT workspace */}
-      <section className="relative min-h-screen w-full overflow-hidden px-4 py-6 md:px-8 lg:px-12">
-        <div className="relative mx-auto aspect-video w-full max-w-[1400px]">
+      <section className="code-texture relative min-h-screen w-full overflow-hidden px-4 py-6 md:px-8 lg:px-12">
+        <div className="relative z-10 mx-auto aspect-video w-full max-w-[1400px]">
           <img
             src={deskCrtSetup}
             alt="Retro beige CRT monitor on a clean wooden desk with colorful sticky notes"
@@ -200,13 +200,13 @@ function Index() {
             style={{ left: "28%", top: "13%", width: "44%", height: "62%" }}
           >
             <div className="z-20 flex flex-col items-center gap-3 px-4 text-center md:gap-4">
-              <span className="text-[10px] font-medium uppercase tracking-[0.3em] text-white/60 md:text-xs lg:text-sm">
+              <span className="font-serif text-[10px] font-medium uppercase tracking-[0.35em] text-neon-green/80 md:text-xs lg:text-sm">
                 Design Portfolio
               </span>
-              <h1 className="font-serif text-3xl font-semibold italic leading-[0.95] text-neon-green neon-glow md:text-5xl lg:text-6xl">
+              <h1 className="font-serif text-3xl font-bold uppercase leading-[0.95] tracking-tight text-neon-green neon-glow md:text-5xl lg:text-6xl">
                 how i ORGANIZE
               </h1>
-              <p className="max-w-[18ch] text-sm font-light leading-snug text-white/90 md:text-base lg:text-lg">
+              <p className="max-w-[22ch] font-sans text-sm font-light leading-snug tracking-wide text-foreground/85 md:text-base lg:text-lg">
                 projects, content, client work
               </p>
             </div>
@@ -216,7 +216,7 @@ function Index() {
             <button
               key={category.id}
               onClick={() => openCategory(category.id)}
-              className={`sticky-note ${category.color}`}
+              className={`sticky-note ${category.color} ${category.tabText}`}
               style={{
                 left: category.position.left,
                 top: category.position.top,
@@ -232,7 +232,7 @@ function Index() {
 
           <button
             onClick={scrollToProjects}
-            className="absolute bottom-[5%] left-1/2 z-20 -translate-x-1/2 rounded-full bg-neon-green px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-crt-dark shadow-[0_0_24px_rgba(74,255,128,0.45)] transition-all hover:scale-105 hover:shadow-[0_0_36px_rgba(74,255,128,0.6)] md:px-7 md:py-3 md:text-sm"
+            className="absolute bottom-[5%] left-1/2 z-20 -translate-x-1/2 rounded-full border border-neon-green/50 bg-sticky-pink px-5 py-2.5 font-serif text-xs font-bold uppercase tracking-[0.2em] text-background shadow-[0_0_28px_color-mix(in_oklab,var(--sticky-pink)_55%,transparent)] transition-all hover:scale-105 hover:bg-neon-green hover:shadow-[0_0_40px_color-mix(in_oklab,var(--neon-green)_55%,transparent)] md:px-7 md:py-3 md:text-sm"
           >
             Scroll to Explore
           </button>
@@ -246,7 +246,7 @@ function Index() {
         aria-label="Project categories"
       >
         <div className="mb-14 text-center">
-          <h2 className="font-serif text-3xl font-semibold italic text-foreground md:text-4xl">
+          <h2 className="font-serif text-3xl font-bold uppercase tracking-tight text-foreground md:text-4xl">
             Selected Work
           </h2>
           <p className="mt-3 text-sm text-muted-foreground md:text-base">
@@ -273,7 +273,7 @@ function Index() {
                   className={`relative ml-6 flex h-11 items-center rounded-t-xl px-7 text-left ${category.color} ${category.tabText} shadow-[0_-4px_18px_rgba(0,0,0,0.35)] transition-transform duration-300 ease-out group-hover:-translate-y-1.5 md:ml-10`}
                   style={{ marginLeft: `${1.5 + index * 3.5}rem` }}
                 >
-                  <span className="font-sans text-xs font-bold uppercase tracking-[0.18em] md:text-sm">
+                  <span className="font-serif text-xs font-bold uppercase tracking-[0.18em] md:text-sm">
                     {category.label}
                   </span>
                 </button>
@@ -292,7 +292,7 @@ function Index() {
                           <button
                             key={project.title}
                             onClick={() => setActiveProject(project)}
-                            className="flex w-full items-center gap-4 rounded-lg border border-border bg-background p-3 text-left transition-all hover:-translate-y-0.5 hover:border-neon-green/50 hover:shadow-lg"
+                            className="flex w-full items-center gap-4 rounded-lg border border-border bg-background p-3 text-left transition-all hover:-translate-y-0.5 hover:border-neon-green/60 hover:shadow-lg"
                           >
                             <img
                               src={project.image}
@@ -330,7 +330,7 @@ function Index() {
         {activeProject && (
           <DialogContent className="max-w-2xl border-border bg-card text-card-foreground">
             <DialogHeader>
-              <DialogTitle className="font-serif text-2xl font-semibold italic">
+              <DialogTitle className="font-serif text-xl font-bold uppercase tracking-tight">
                 {activeProject.title}
               </DialogTitle>
               <DialogDescription className="text-muted-foreground">
