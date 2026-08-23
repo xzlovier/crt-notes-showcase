@@ -79,12 +79,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Design Portfolio — Retro CRT Workspace" },
       { name: "description", content: "A curated design portfolio organized like a retro CRT workspace." },
-      { name: "author", content: "Lovable" },
+      { name: "author", content: "Your Name" },
       { property: "og:title", content: "Design Portfolio — Retro CRT Workspace" },
       { property: "og:description", content: "A curated design portfolio organized like a retro CRT workspace." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {
