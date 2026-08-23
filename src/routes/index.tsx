@@ -59,7 +59,7 @@ const categories: Category[] = [
     label: "Digital Products",
     color: "bg-sticky-blue",
     tabText: "text-white",
-    position: { left: "21%", top: "67%", rotate: "-4deg" },
+    position: { left: "25%", top: "71%", rotate: "-3deg" },
     projects: [
       {
         title: "Lumen Dashboard",
@@ -95,7 +95,7 @@ const categories: Category[] = [
     label: "Client Work",
     color: "bg-sticky-pink",
     tabText: "text-background",
-    position: { left: "62%", top: "67%", rotate: "2deg" },
+    position: { left: "66%", top: "71%", rotate: "2deg" },
     projects: [
       {
         title: "Bloom Editorial",
@@ -131,7 +131,7 @@ const categories: Category[] = [
     label: "Brand Systems",
     color: "bg-sticky-yellow",
     tabText: "text-background",
-    position: { left: "62%", top: "9%", rotate: "3deg" },
+    position: { left: "65%", top: "7%", rotate: "3deg" },
     projects: [
       {
         title: "Nova Studios Identity",
@@ -187,17 +187,17 @@ function Index() {
         <div className="relative z-10 mx-auto aspect-video w-full max-w-[1400px]">
           <img
             src={deskCrtSetup}
-            alt="Retro beige CRT monitor on a clean wooden desk with colorful sticky notes"
+            alt="Illustrated retro CRT monitor with keyboard, CPU tower and a neon desk lamp"
             className="absolute inset-0 h-full w-full object-cover"
             width={1920}
-            height={1088}
+            height={768}
             loading="eager"
             decoding="async"
           />
 
           <div
             className="crt-scanlines crt-glow animate-soft-flicker absolute flex flex-col items-center justify-center bg-crt-dark"
-            style={{ left: "28%", top: "13%", width: "44%", height: "62%" }}
+            style={{ left: "27%", top: "12%", width: "45%", height: "57%" }}
           >
             <div className="z-20 flex flex-col items-center gap-3 px-4 text-center md:gap-4">
               <span className="font-serif text-[10px] font-medium uppercase tracking-[0.35em] text-neon-green/80 md:text-xs lg:text-sm">
