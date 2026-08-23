@@ -194,7 +194,7 @@ function Index() {
   return (
     <main className="riso-grain min-h-screen bg-background overflow-hidden">
       {/* Hero: CRT workspace */}
-      <section className="code-texture relative min-h-screen w-full px-4 py-6 pb-32 md:px-8 lg:px-12 lg:pb-48">
+      <section className="code-texture relative flex flex-col justify-center w-full px-4 pt-12 pb-16 md:min-h-screen md:px-8 lg:px-12 lg:pb-48">
         
         {/* Pixel Folders scattered in background */}
         {pixelFolders.map((pf, i) => (
@@ -283,7 +283,7 @@ function Index() {
       </section>
 
       {/* Big Background Folder (About Me) */}
-      <section className="mx-auto max-w-5xl px-4 py-16 md:py-24">
+      <section className="mx-auto max-w-5xl px-4 py-8 md:py-24">
         <div className="relative group transition-transform duration-500 ease-out hover:-translate-y-2">
           
           {/* Big Folder Tab */}
