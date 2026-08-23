@@ -7,11 +7,13 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
-import deskCrtSetup from "@/assets/desk-crt-setup.png";
+import realisticPcImage from "@/assets/realistic-pc.png";
+import retroBaseImage from "@/assets/retro-base-transparent.png";
 import workBrand from "@/assets/work-brand.jpg";
 import workDigital from "@/assets/work-digital.jpg";
 import workClient from "@/assets/work-client.jpg";
-
+import cursorSvg from "@/assets/cursor.svg";
+import pixelFolderImage from "@/assets/pixel-folder.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -57,9 +59,9 @@ const categories: Category[] = [
   {
     id: "digital-products",
     label: "Digital Products",
-    color: "bg-sticky-blue",
-    tabText: "text-white",
-    position: { left: "25%", top: "71%", rotate: "-3deg" },
+    color: "bg-sticky-yellow",
+    tabText: "text-background",
+    position: { left: "24.5%", top: "71%", rotate: "-3deg" },
     projects: [
       {
         title: "Lumen Dashboard",
@@ -95,7 +97,7 @@ const categories: Category[] = [
     label: "Client Work",
     color: "bg-sticky-pink",
     tabText: "text-background",
-    position: { left: "66%", top: "71%", rotate: "2deg" },
+    position: { left: "66.5%", top: "72%", rotate: "1deg" },
     projects: [
       {
         title: "Bloom Editorial",
@@ -129,9 +131,9 @@ const categories: Category[] = [
   {
     id: "brand-systems",
     label: "Brand Systems",
-    color: "bg-sticky-yellow",
-    tabText: "text-background",
-    position: { left: "65%", top: "7%", rotate: "3deg" },
+    color: "bg-sticky-blue",
+    tabText: "text-white",
+    position: { left: "66%", top: "8%", rotate: "2deg" },
     projects: [
       {
         title: "Nova Studios Identity",
@@ -167,6 +169,7 @@ const categories: Category[] = [
 function Index() {
   const [openFolder, setOpenFolder] = useState<string | null>(null);
   const [activeProject, setActiveProject] = useState<Project | null>(null);
+  const [aboutOpen, setAboutOpen] = useState(true);
   const projectsRef = useRef<HTMLDivElement>(null);
 
   const scrollToProjects = () => {
@@ -180,24 +183,47 @@ function Index() {
     );
   };
 
+  const pixelFolders = [
+    { left: "10%", top: "12%", rotate: "-8deg", width: "w-20 md:w-28", delay: "0s" },
+    { left: "85%", top: "18%", rotate: "12deg", width: "w-16 md:w-24", delay: "0.2s" },
+    { left: "6%", top: "60%", rotate: "6deg", width: "w-24 md:w-32", delay: "0.4s" },
+    { left: "88%", top: "68%", rotate: "-15deg", width: "w-20 md:w-28", delay: "0.1s" },
+    { left: "68%", top: "8%", rotate: "5deg", width: "w-14 md:w-20", delay: "0.3s" },
+  ];
+
   return (
-    <main className="riso-grain min-h-screen bg-background">
+    <main className="riso-grain min-h-screen bg-background overflow-hidden">
       {/* Hero: CRT workspace */}
-      <section className="code-texture relative min-h-screen w-full overflow-hidden px-4 py-6 md:px-8 lg:px-12">
-        <div className="relative z-10 mx-auto aspect-video w-full max-w-[1400px]">
+      <section className="code-texture relative min-h-screen w-full px-4 py-6 pb-32 md:px-8 lg:px-12 lg:pb-48">
+        
+        {/* Pixel Folders scattered in background */}
+        {pixelFolders.map((pf, i) => (
           <img
-            src={deskCrtSetup}
-            alt="Illustrated retro CRT monitor with keyboard, CPU tower and a neon desk lamp"
+            key={i}
+            src={pixelFolderImage}
+            alt=""
+            className={`absolute z-0 opacity-85 hover:scale-110 transition-transform cursor-default ${pf.width}`}
+            style={{
+              left: pf.left,
+              top: pf.top,
+              rotate: pf.rotate,
+              imageRendering: "pixelated",
+              filter: "drop-shadow(0 10px 15px rgba(0,0,0,0.5))"
+            }}
+          />
+        ))}
+        <div className="relative z-10 mx-auto aspect-video w-full max-w-[1400px]" style={{ aspectRatio: "1024/571" }}>
+          <img
+            src={realisticPcImage}
+            alt="Retro beige CRT monitor on a clean wooden desk with colorful sticky notes"
             className="absolute inset-0 h-full w-full object-cover"
-            width={1920}
-            height={768}
             loading="eager"
             decoding="async"
           />
 
           <div
             className="crt-scanlines crt-glow animate-soft-flicker absolute flex flex-col items-center justify-center bg-crt-dark"
-            style={{ left: "27%", top: "12%", width: "45%", height: "57%" }}
+            style={{ left: "27.5%", top: "17.5%", width: "44.5%", height: "52.5%" }}
           >
             <div className="z-20 flex flex-col items-center gap-3 px-4 text-center md:gap-4">
               <span className="font-serif text-[10px] font-medium uppercase tracking-[0.35em] text-neon-green/80 md:text-xs lg:text-sm">
@@ -212,6 +238,22 @@ function Index() {
             </div>
           </div>
 
+          {/* Retro Base Setup placed below the monitor screen */}
+          <div 
+            className="absolute z-0 pointer-events-none opacity-95 flex justify-center items-start"
+            style={{ 
+              left: "26.5%", 
+              top: "69%", 
+              width: "46.5%",
+            }}
+          >
+            <img 
+              src={retroBaseImage} 
+              alt="Retro computer base and keyboard" 
+              className="w-full h-auto object-contain drop-shadow-xl"
+            />
+          </div>
+
           {categories.map((category) => (
             <button
               key={category.id}
@@ -221,6 +263,7 @@ function Index() {
                 left: category.position.left,
                 top: category.position.top,
                 rotate: category.position.rotate,
+                zIndex: 10,
               }}
               aria-label={`Open ${category.label} projects`}
             >
@@ -232,93 +275,167 @@ function Index() {
 
           <button
             onClick={scrollToProjects}
-            className="absolute bottom-[5%] left-1/2 z-20 -translate-x-1/2 rounded-full border border-neon-green/50 bg-sticky-pink px-5 py-2.5 font-serif text-xs font-bold uppercase tracking-[0.2em] text-background shadow-[0_0_28px_color-mix(in_oklab,var(--sticky-pink)_55%,transparent)] transition-all hover:scale-105 hover:bg-neon-green hover:shadow-[0_0_40px_color-mix(in_oklab,var(--neon-green)_55%,transparent)] md:px-7 md:py-3 md:text-sm"
+            className="absolute bottom-[5%] left-1/2 z-20 -translate-x-1/2 rounded-full border border-neon-green/50 bg-sticky-pink px-3 py-1.5 font-serif text-[10px] font-bold uppercase tracking-[0.2em] text-background transition-transform duration-300 hover:scale-110 md:px-4 md:py-2 md:text-xs"
           >
             Scroll to Explore
           </button>
         </div>
       </section>
 
-      {/* Folder stack */}
-      <section
-        ref={projectsRef}
-        className="mx-auto max-w-4xl px-5 py-24 md:py-32"
-        aria-label="Project categories"
-      >
-        <div className="mb-14 text-center">
-          <h2 className="font-serif text-3xl font-bold uppercase tracking-tight text-foreground md:text-4xl">
-            Selected Work
-          </h2>
-          <p className="mt-3 text-sm text-muted-foreground md:text-base">
-            Open a folder to browse the projects inside.
-          </p>
-        </div>
+      {/* Big Background Folder (About Me) */}
+      <section className="mx-auto max-w-5xl px-4 py-16 md:py-24">
+        <div className="relative group transition-transform duration-500 ease-out hover:-translate-y-2">
+          
+          {/* Big Folder Tab */}
+          <button 
+            onClick={() => setAboutOpen(!aboutOpen)}
+            className="relative z-0 ml-4 flex h-14 items-center gap-2 rounded-t-2xl bg-crt-dark px-8 text-left shadow-[0_-6px_20px_rgba(0,0,0,0.4)] md:ml-12"
+            aria-expanded={aboutOpen}
+          >
+            <span className="font-serif text-sm font-bold uppercase tracking-[0.25em] text-neon-green">
+              Profile / About
+            </span>
+            <img 
+              src={cursorSvg} 
+              alt="" 
+              className="relative z-10 h-16 w-auto -translate-y-5 translate-x-3 opacity-90 drop-shadow-[0_4px_8px_rgba(0,0,0,0.5)]" 
+              aria-hidden="true" 
+            />
+          </button>
 
-        <div className="flex flex-col">
-          {categories.map((category, index) => {
-            const isOpen = openFolder === category.id;
-            return (
-              <div
-                key={category.id}
-                className={`folder group relative ${isOpen ? "z-30" : ""}`}
-                style={{
-                  marginTop: index === 0 ? 0 : isOpen ? "1.5rem" : "-1.25rem",
-                  zIndex: isOpen ? 30 : index + 1,
-                }}
-              >
-                {/* Folder tab */}
-                <button
-                  onClick={() => setOpenFolder(isOpen ? null : category.id)}
-                  aria-expanded={isOpen}
-                  className={`relative ml-6 flex h-11 items-center rounded-t-xl px-7 text-left ${category.color} ${category.tabText} shadow-[0_-4px_18px_rgba(0,0,0,0.35)] transition-transform duration-300 ease-out group-hover:-translate-y-1.5 md:ml-10`}
-                  style={{ marginLeft: `${1.5 + index * 3.5}rem` }}
-                >
-                  <span className="font-serif text-xs font-bold uppercase tracking-[0.18em] md:text-sm">
-                    {category.label}
-                  </span>
-                </button>
+          {/* Big Folder Body */}
+          <div className="relative z-10 -mt-px rounded-3xl rounded-tl-none bg-crt-dark p-6 shadow-[0_25px_50px_rgba(0,0,0,0.5)] md:p-12">
+            
+            {/* Click overlay for the folder background to open the about section */}
+            {!aboutOpen && (
+              <div 
+                className="absolute inset-0 z-0 cursor-pointer"
+                onClick={() => setAboutOpen(true)}
+                aria-label="Open About Me"
+              />
+            )}
 
-                {/* Folder body */}
-                <div
-                  onClick={() => !isOpen && setOpenFolder(category.id)}
-                  className={`-mt-px rounded-2xl rounded-tl-none ${category.color} p-1.5 shadow-[0_18px_40px_rgba(0,0,0,0.45)] transition-transform duration-300 ease-out group-hover:-translate-y-1.5 ${isOpen ? "" : "cursor-pointer"}`}
-                >
-                  <div
-                    className={`grid transition-[grid-template-rows] duration-500 ease-out ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}
-                  >
-                    <div className="min-h-0 overflow-hidden">
-                      <div className="space-y-3 rounded-xl bg-card/95 p-3 md:p-4">
-                        {category.projects.map((project) => (
-                          <button
-                            key={project.title}
-                            onClick={() => setActiveProject(project)}
-                            className="flex w-full items-center gap-4 rounded-lg border border-border bg-background p-3 text-left transition-all hover:-translate-y-0.5 hover:border-neon-green/60 hover:shadow-lg"
-                          >
-                            <img
-                              src={project.image}
-                              alt={`${project.title} artwork`}
-                              width={1024}
-                              height={768}
-                              loading="lazy"
-                              className="h-16 w-24 flex-none rounded-md object-cover md:h-20 md:w-32"
-                            />
-                            <span className="min-w-0">
-                              <span className="block font-sans text-sm font-semibold text-foreground md:text-base">
-                                {project.title}
-                              </span>
-                              <span className="mt-1 block text-xs leading-relaxed text-muted-foreground md:text-sm">
-                                {project.description}
-                              </span>
-                            </span>
-                          </button>
-                        ))}
-                      </div>
-                    </div>
+            {/* Expandable About Section (Files) */}
+            <div className={`relative z-20 grid transition-[grid-template-rows] duration-700 ease-out ${aboutOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
+              <div className="min-h-0 overflow-hidden">
+                <div className="mb-12 mt-4 flex flex-col gap-6 md:flex-row relative">
+                  {/* Photo "File" */}
+                  <div className="relative rotate-[-2deg] rounded bg-[#e8e4db] p-3 shadow-xl md:w-1/3 transition-transform hover:rotate-0">
+                     <img src={realisticPcImage} className="aspect-square w-full object-cover grayscale opacity-80 mix-blend-multiply" alt="Portrait" />
+                     <div className="mt-3 text-center font-serif text-xs text-black/60 font-bold uppercase tracking-widest">Sameer Baranwal</div>
+                  </div>
+
+                  {/* Intro "File" */}
+                  <div className="relative rotate-[1deg] rounded bg-[#fdfbf7] p-6 shadow-xl md:w-2/3 text-black transition-transform hover:rotate-0 flex flex-col">
+                     <div className="flex justify-between items-start border-b border-black/10 pb-4 mb-4">
+                        <h3 className="font-serif text-xl font-bold uppercase tracking-widest text-black/80">Introduction</h3>
+                        <span className="font-serif text-xs text-black/40 font-mono">DOC-001</span>
+                     </div>
+                     <div className="space-y-4 font-sans text-sm leading-relaxed text-black/70 flex-grow">
+                        <p>
+                          I am a designer and developer focused on crafting highly polished digital products, 
+                          brand systems, and client work. My approach combines retro aesthetics with modern 
+                          engineering to create memorable web experiences.
+                        </p>
+                        <p>
+                          I believe in building interfaces that are not just functional, but have character 
+                          and tell a story.
+                        </p>
+                     </div>
+                     <button 
+                       onClick={(e) => { e.stopPropagation(); setAboutOpen(false); }}
+                       className="mt-6 self-start font-serif text-xs font-bold uppercase tracking-widest text-black/40 hover:text-black/80 transition-colors"
+                     >
+                       [ Close File ]
+                     </button>
                   </div>
                 </div>
               </div>
-            );
-          })}
+            </div>
+
+            {/* Folder stack (Selected Work) */}
+            <div
+              ref={projectsRef}
+              className="relative z-20 mx-auto max-w-4xl"
+              aria-label="Project categories"
+            >
+              <div className="mb-14 text-center">
+                <h2 className="font-serif text-3xl font-bold uppercase tracking-tight text-neon-green md:text-4xl">
+                  Selected Work
+                </h2>
+                <p className="mt-3 text-sm text-neon-green/70 md:text-base">
+                  Open a folder to browse the projects inside.
+                </p>
+              </div>
+
+              <div className="flex flex-col">
+                {categories.map((category, index) => {
+                  const isOpen = openFolder === category.id;
+                  return (
+                    <div
+                      key={category.id}
+                      className={`folder group relative ${isOpen ? "z-30" : ""}`}
+                      style={{
+                        marginTop: index === 0 ? 0 : isOpen ? "1.5rem" : "-1.25rem",
+                        zIndex: isOpen ? 30 : index + 1,
+                      }}
+                    >
+                      {/* Folder tab */}
+                      <button
+                        onClick={() => setOpenFolder(isOpen ? null : category.id)}
+                        aria-expanded={isOpen}
+                        className={`relative ml-6 flex h-11 items-center rounded-t-xl px-7 text-left ${category.color} ${category.tabText} shadow-[0_-4px_18px_rgba(0,0,0,0.35)] transition-transform duration-300 ease-out group-hover:-translate-y-1.5 md:ml-10`}
+                        style={{ marginLeft: `${1.5 + index * 3.5}rem` }}
+                      >
+                        <span className="font-serif text-xs font-bold uppercase tracking-[0.18em] md:text-sm">
+                          {category.label}
+                        </span>
+                      </button>
+
+                      {/* Folder body */}
+                      <div
+                        onClick={() => !isOpen && setOpenFolder(category.id)}
+                        className={`-mt-px rounded-2xl rounded-tl-none ${category.color} p-1.5 shadow-[0_18px_40px_rgba(0,0,0,0.45)] transition-transform duration-300 ease-out group-hover:-translate-y-1.5 ${isOpen ? "" : "cursor-pointer"}`}
+                      >
+                        <div
+                          className={`grid transition-[grid-template-rows] duration-500 ease-out ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}
+                        >
+                          <div className="min-h-0 overflow-hidden">
+                            <div className="space-y-3 rounded-xl bg-card/95 p-3 md:p-4">
+                              {category.projects.map((project) => (
+                                <button
+                                  key={project.title}
+                                  onClick={(e) => { e.stopPropagation(); setActiveProject(project); }}
+                                  className="flex w-full items-center gap-4 rounded-lg border border-border bg-background p-3 text-left transition-all hover:-translate-y-0.5 hover:border-neon-green/60 hover:shadow-lg"
+                                >
+                                  <img
+                                    src={project.image}
+                                    alt={`${project.title} artwork`}
+                                    width={1024}
+                                    height={768}
+                                    loading="lazy"
+                                    className="h-16 w-24 flex-none rounded-md object-cover md:h-20 md:w-32"
+                                  />
+                                  <span className="min-w-0">
+                                    <span className="block font-sans text-sm font-semibold text-foreground md:text-base">
+                                      {project.title}
+                                    </span>
+                                    <span className="mt-1 block text-xs leading-relaxed text-muted-foreground md:text-sm">
+                                      {project.description}
+                                    </span>
+                                  </span>
+                                </button>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

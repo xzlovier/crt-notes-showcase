@@ -1,0 +1,54 @@
+Update the file `c:\Personal Creative Projects\portfolio\src\styles.css` by ADDING new utility classes at the end of the file (keep ALL existing content). Add the following new CSS utilities and keyframes AFTER the existing `animate-float-up` utility (which is the last thing in the file):
+
+1. **Sticky note styles** — a utility class `sticky-note` that gives:
+   - Padding: 1.25rem 1rem
+   - Border radius: 2px (slightly rough/square edges)
+   - Box shadow: a subtle paper-like shadow `2px 3px 8px rgba(0,0,0,0.3)`
+   - Position: relative
+   - Font family: 'Inter', sans-serif (non-mono for handwritten feel contrast)
+   - Font size: 0.8rem
+   - Line-height: 1.5
+   - A `::before` pseudo-element that simulates tape at the top: small rectangle (30px wide, 14px tall) centered at top, slightly transparent, background `rgba(255,255,255,0.25)`, positioned `top: -7px; left: 50%; transform: translateX(-50%)`
+   - Transition: transform 0.3s ease
+   - On hover: `transform: scale(1.05) rotate(0deg)` and slightly stronger shadow
+
+2. **Sticky note color variants** as utilities:
+   - `sticky-yellow`: background `#fef3c7`, color `#92400e`
+   - `sticky-pink`: background `#fce7f3`, color `#9d174d`
+   - `sticky-blue`: background `#dbeafe`, color `#1e40af`
+   - `sticky-green`: background `#d1fae5`, color `#065f46`
+
+3. **Folder stack styles** — a utility `folder-tab`:
+   - Background: linear-gradient(180deg, #d4a574 0%, #c4915e 100%) (manila folder color)
+   - Border-radius: 8px 8px 0 0
+   - Padding: 0.75rem 1.5rem
+   - Cursor: pointer
+   - Transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease
+   - Box-shadow: 0 -2px 8px rgba(0,0,0,0.15)
+   - Position: relative
+   - Border: 1px solid rgba(139, 90, 43, 0.3)
+   - border-bottom: none
+
+4. **Folder body** — a utility `folder-body`:
+   - Background: linear-gradient(180deg, #c4915e 0%, #b8854f 100%)
+   - Border-radius: 0 0 8px 8px
+   - Padding: 1.5rem
+   - Border: 1px solid rgba(139, 90, 43, 0.3)
+   - border-top: none
+   - Overflow: hidden
+   - Transition: max-height 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), padding 0.3s ease, opacity 0.3s ease
+
+5. **Folder hover lift** — a utility `folder-lift`:
+   - On hover: `transform: translateY(-8px)` and box-shadow increases to `0 -4px 16px rgba(0,0,0,0.25)`
+
+6. **Keyframe `folder-expand`**:
+   ```
+   @keyframes folder-expand {
+     0% { max-height: 0; opacity: 0; padding-top: 0; padding-bottom: 0; }
+     100% { max-height: 500px; opacity: 1; }
+   }
+   ```
+
+7. **Utility `animate-folder-expand`**: `animation: folder-expand 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards`
+
+IMPORTANT: Read the current file first, keep ALL existing content, and only APPEND the new utilities after the last line. Use the `@utility` syntax that the existing file uses (e.g. `@utility sticky-note { ... }`). Use `write_to_file` with Overwrite=true to write the complete file.

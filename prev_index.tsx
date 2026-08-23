@@ -1,0 +1,5 @@
+   - Position: relative
+   - Font family: 'Inter', sans-serif (non-mono for handwritten feel contrast)
+   - Font size: 0.8rem
+   - Line-height: 1.5
+   - A 
