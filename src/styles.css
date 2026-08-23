@@ -273,8 +273,7 @@
   font-weight: 600;
   font-size: 0.875rem;
   line-height: 1.25;
-  color: oklch(0.2 0.02 270);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   transform-origin: center center;
