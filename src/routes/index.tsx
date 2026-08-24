@@ -8,6 +8,7 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 import realisticPcImage from "@/assets/realistic-pc.png";
+import portfolioMural from "@/assets/portfolio-mural.png";
 import profileMonitorImage from "@/assets/profile-monitor.png";
 import retroBaseImage from "@/assets/retro-base-transparent.png";
 import workBrand from "@/assets/work-brand.jpg";
@@ -304,7 +305,16 @@ function Index() {
             />
           </div>
         ))}
-        <div className="relative z-10 mx-auto aspect-video w-full max-w-[1400px] @container" style={{ aspectRatio: "1024/571" }}>
+                {/* Background Typography Mural */}
+        <div className="absolute inset-0 z-0 flex items-start justify-center pt-8 md:pt-16 pointer-events-none">
+          <img 
+            src={portfolioMural} 
+            alt="Portfolio Typography" 
+            className="w-[90%] max-w-[1000px] opacity-90 drop-shadow-2xl mix-blend-screen" 
+          />
+        </div>
+
+        <div className="relative z-10 mx-auto aspect-video w-full max-w-[1400px] mt-[25%] md:mt-[15%] @container" style={{ aspectRatio: "1024/571" }}>
           <img
             src={realisticPcImage}
             alt="Retro beige CRT monitor on a clean wooden desk with colorful sticky notes"
@@ -317,22 +327,34 @@ function Index() {
             className="crt-scanlines crt-glow animate-soft-flicker absolute flex flex-col items-center justify-center bg-crt-dark"
             style={{ left: "27.5%", top: "17.5%", width: "44.5%", height: "52.5%" }}
           >
-            <div className="z-20 flex flex-col items-center gap-1 md:gap-3 px-2 md:px-4 text-center">
-              <span className="font-serif text-[1.5cqw] md:text-[10px] lg:text-xs font-medium uppercase tracking-[0.35em] text-white/70">
-                Selected Works
-              </span>
-              <h1 
-                className="text-[6cqw] md:text-5xl lg:text-7xl uppercase leading-[0.9] tracking-tighter text-white/95 mix-blend-screen"
-                style={{ 
-                  fontFamily: "'Silkscreen', monospace",
-                  textShadow: "0 0 4px rgba(255,255,255,0.4)" 
-                }}
-              >
-                Portfolio
-              </h1>
-              <p className="max-w-[22ch] font-sans text-[2cqw] md:text-sm lg:text-base font-light leading-snug tracking-wide text-white/60">
-                projects, content, client work
-              </p>
+            <div className="z-20 flex flex-col items-center justify-center h-full w-full p-2 md:p-6 text-center pointer-events-none">
+              <div className="relative flex flex-col items-center justify-center p-4 md:p-6 rounded-xl border border-white/5 bg-black/20 backdrop-blur-[2px] shadow-[0_0_30px_rgba(255,255,255,0.03)] overflow-hidden w-[90%] max-w-[400px]">
+                
+                {/* Aberration / Glow effects */}
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-transparent opacity-20 mix-blend-overlay"></div>
+                
+                <img 
+                  src={profileMonitorImage} 
+                  alt="Sameer Baranwal" 
+                  className="w-16 h-16 md:w-24 md:h-24 rounded-full border border-white/20 object-cover object-center shadow-[0_0_20px_rgba(255,255,255,0.3)] mb-3 filter contrast-125 saturate-50"
+                />
+                
+                <h2 className="text-white font-serif text-sm md:text-xl font-bold uppercase tracking-widest drop-shadow-[0_0_8px_rgba(255,255,255,0.6)] mb-1">
+                  Sameer Baranwal
+                </h2>
+                
+                <h3 className="text-neon-green/90 font-mono text-[8px] md:text-[10px] uppercase tracking-widest mb-3 drop-shadow-[0_0_5px_rgba(0,255,0,0.4)]">
+                  UI/UX & Brand Identity Designer
+                </h3>
+                
+                <p className="text-white/60 font-sans text-[9px] md:text-xs font-light leading-relaxed max-w-[280px]">
+                  Minimalist aesthetic with maximalist strategy. <br/>
+                  Making things pixel-perfect since 2018.
+                </p>
+
+                {/* CRT Scanline overlay specific to the card for extra native feel */}
+                <div className="absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_4px,3px_100%] pointer-events-none z-50 mix-blend-screen opacity-50"></div>
+              </div>
             </div>
           </div>
 
