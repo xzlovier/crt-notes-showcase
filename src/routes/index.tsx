@@ -12,6 +12,7 @@ import retroBaseImage from "@/assets/retro-base-transparent.png";
 import workBrand from "@/assets/work-brand.jpg";
 import workDigital from "@/assets/work-digital.jpg";
 import workClient from "@/assets/work-client.jpg";
+import seekhoMerch from "@/assets/seekho-merch.png";
 import cursorSvg from "@/assets/cursor.svg";
 import pixelFolderImage from "@/assets/pixel-folder.png";
 
@@ -100,31 +101,13 @@ const categories: Category[] = [
     position: { left: "66.5%", top: "72%", rotate: "1deg" },
     projects: [
       {
-        title: "Bloom Editorial",
-        description: "Art direction and layout for a quarterly culture magazine.",
-        image: workClient,
-        year: "2025",
-        role: "Art direction",
-        story:
-          "Bloom mixes a high-contrast serif with hand-set pull quotes and full-bleed photography. Each issue changes accent colour while the grid stays fixed, giving the magazine variety without losing its shelf identity.",
-      },
-      {
-        title: "Forma Architects",
-        description: "Website and portfolio system for a boutique architecture firm.",
-        image: workClient,
+        title: "Seekho Event Merchandise",
+        description: "Custom freelance merchandise design for a corporate event.",
+        image: seekhoMerch,
         year: "2024",
-        role: "Web design, build",
+        role: "Freelance Designer",
         story:
-          "Forma needed a site that behaved like a portfolio book: quiet chrome, huge imagery, and captions that carry the technical detail. Projects are entered through a single scrolling index rather than a menu.",
-      },
-      {
-        title: "Resonance Festival",
-        description: "Campaign identity, posters, and digital experiences.",
-        image: workClient,
-        year: "2023",
-        role: "Identity, campaign",
-        story:
-          "The Resonance system is built from one waveform motif that stretches and compresses across posters, tickets and stage screens, so the identity feels composed rather than copy-pasted across formats.",
+          "A bold, collage-style typographic design created for a corporate event by Seekho. The merchandise highlights key company milestones, catchphrases, and values in a vibrant and dynamic arrangement, creating a wearable piece of company culture for the attendees.",
       },
     ],
   },

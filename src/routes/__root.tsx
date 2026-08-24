@@ -7,7 +7,7 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -112,6 +112,55 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   errorComponent: ErrorComponent,
 });
 
+function MobileOrientationOverlay() {
+  const [isMobile, setIsMobile] = useState(false);
+  const [isPortrait, setIsPortrait] = useState(false);
+
+  useEffect(() => {
+    // Detect mobile/tablet device via user agent
+    const checkIsMobile = () => {
+      return /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
+    };
+    
+    setIsMobile(checkIsMobile());
+
+    // Detect orientation
+    const checkOrientation = () => {
+      return window.matchMedia("(orientation: portrait)").matches;
+    };
+    
+    setIsPortrait(checkOrientation());
+
+    // Monitor orientation changes
+    const mediaQuery = window.matchMedia("(orientation: portrait)");
+    const handleOrientationChange = (e: MediaQueryListEvent) => {
+      setIsPortrait(e.matches);
+    };
+
+    mediaQuery.addEventListener("change", handleOrientationChange);
+    return () => mediaQuery.removeEventListener("change", handleOrientationChange);
+  }, []);
+
+  if (!isMobile) return null;
+
+  return (
+    <div 
+      className={`fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-black transition-opacity duration-500 ${isPortrait ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+    >
+      {/* Neon green looping SVG representing phone rotation */}
+      <div className="text-[#39ff14] mb-8">
+         <svg className="w-24 h-24 animate-[tilt-phone_2s_ease-in-out_infinite]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ filter: "drop-shadow(0 0 8px rgba(57, 255, 20, 0.8))" }}>
+            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+            <path d="M12 18h.01"></path>
+         </svg>
+      </div>
+      <p className="font-mono text-[#39ff14] text-sm tracking-widest drop-shadow-[0_0_5px_rgba(57,255,20,0.8)]">
+        // SYSTEM_MESSG: please_rotate_device
+      </p>
+    </div>
+  );
+}
+
 function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className="dark">
@@ -119,6 +168,7 @@ function RootShell({ children }: { children: ReactNode }) {
         <HeadContent />
       </head>
       <body>
+        <MobileOrientationOverlay />
         {children}
         <Scripts />
       </body>
