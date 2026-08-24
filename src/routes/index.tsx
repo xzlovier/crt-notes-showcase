@@ -63,8 +63,6 @@ const categories: Category[] = [
     label: "Illustrations",
     color: "bg-sticky-yellow",
     tabText: "text-background",
-    position: { left: "23%", top: "12%", rotate: "-5deg" },
-    position: { left: "16%", top: "12%", rotate: "-5deg" },
     position: { left: "16%", top: "9%", rotate: "-5deg" },
     projects: [
       {
@@ -90,7 +88,6 @@ const categories: Category[] = [
     label: "Creatives/Posters",
     color: "bg-sticky-blue",
     tabText: "text-white",
-    position: { left: "24%", top: "70%", rotate: "4deg" },
     position: { left: "18%", top: "70%", rotate: "4deg" },
     projects: [
       {
@@ -108,7 +105,6 @@ const categories: Category[] = [
     label: "Client Work",
     color: "bg-sticky-pink",
     tabText: "text-background",
-    position: { left: "66%", top: "72%", rotate: "1deg" },
     position: { left: "61%", top: "72%", rotate: "1deg" },
     projects: [
       {
@@ -127,7 +123,6 @@ const categories: Category[] = [
     label: "Editorial Design",
     color: "bg-sticky-yellow",
     tabText: "text-background",
-    position: { left: "70%", top: "58%", rotate: "-6deg" },
     position: { left: "66%", top: "58%", rotate: "-6deg" },
     small: true,
     projects: [
@@ -147,7 +142,6 @@ const categories: Category[] = [
     color: "bg-sticky-blue",
     tabText: "text-white",
     position: { left: "65%", top: "9%", rotate: "3deg" },
-    position: { left: "61%", top: "9%", rotate: "3deg" },
     projects: [
       {
         title: "Nova Studios Identity",
