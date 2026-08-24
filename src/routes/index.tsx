@@ -306,7 +306,7 @@ function Index() {
           </div>
         ))}
                 {/* Background Typography Mural */}
-        <div className="absolute inset-0 z-0 flex items-start justify-center pt-8 md:pt-16 pointer-events-none">
+        <div className="absolute inset-0 z-0 flex items-start justify-center pt-4 pointer-events-none -mt-8 md:-mt-20">
           <img 
             src={portfolioMural} 
             alt="Portfolio Typography" 
@@ -314,7 +314,7 @@ function Index() {
           />
         </div>
 
-        <div className="relative z-10 mx-auto aspect-video w-full max-w-[1400px] mt-[25%] md:mt-[15%] @container" style={{ aspectRatio: "1024/571" }}>
+        <div className="relative z-10 mx-auto aspect-video w-full max-w-[1400px] mt-[30%] md:mt-[22%] @container" style={{ aspectRatio: "1024/571" }}>
           <img
             src={realisticPcImage}
             alt="Retro beige CRT monitor on a clean wooden desk with colorful sticky notes"
@@ -327,33 +327,38 @@ function Index() {
             className="crt-scanlines crt-glow animate-soft-flicker absolute flex flex-col items-center justify-center bg-crt-dark"
             style={{ left: "27.5%", top: "17.5%", width: "44.5%", height: "52.5%" }}
           >
-            <div className="z-20 flex flex-col items-center justify-center h-full w-full p-2 md:p-6 text-center pointer-events-none">
-              <div className="relative flex flex-col items-center justify-center p-4 md:p-6 rounded-xl border border-white/5 bg-black/20 backdrop-blur-[2px] shadow-[0_0_30px_rgba(255,255,255,0.03)] overflow-hidden w-[90%] max-w-[400px]">
+            <div className="z-20 flex flex-col items-center justify-center h-full w-full p-2 md:p-4 pointer-events-none">
+              
+              <div className="relative flex flex-row gap-2 md:gap-4 w-[95%] max-w-[500px] h-[85%] md:h-auto items-stretch overflow-hidden">
                 
                 {/* Aberration / Glow effects */}
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-transparent opacity-20 mix-blend-overlay"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-transparent opacity-20 mix-blend-overlay rounded-xl"></div>
                 
-                <img 
-                  src={profileMonitorImage} 
-                  alt="Sameer Baranwal" 
-                  className="w-16 h-16 md:w-24 md:h-24 rounded-full border border-white/20 object-cover object-center shadow-[0_0_20px_rgba(255,255,255,0.3)] mb-3 filter contrast-125 saturate-50"
-                />
-                
-                <h2 className="text-white font-serif text-sm md:text-xl font-bold uppercase tracking-widest drop-shadow-[0_0_8px_rgba(255,255,255,0.6)] mb-1">
-                  Sameer Baranwal
-                </h2>
-                
-                <h3 className="text-neon-green/90 font-mono text-[8px] md:text-[10px] uppercase tracking-widest mb-3 drop-shadow-[0_0_5px_rgba(0,255,0,0.4)]">
-                  UI/UX & Brand Identity Designer
-                </h3>
-                
-                <p className="text-white/60 font-sans text-[9px] md:text-xs font-light leading-relaxed max-w-[280px]">
-                  Minimalist aesthetic with maximalist strategy. <br/>
-                  Making things pixel-perfect since 2018.
-                </p>
+                {/* Left Panel: Photo & Name */}
+                <div className="relative flex flex-col justify-center items-center w-[40%] bg-black/40 border border-white/10 rounded-lg p-2 shadow-[0_0_15px_rgba(255,255,255,0.03)]">
+                  <img 
+                    src={profileMonitorImage} 
+                    alt="Sameer Baranwal" 
+                    className="w-full aspect-square object-cover rounded shadow-[0_0_10px_rgba(255,255,255,0.2)] filter contrast-125 saturate-50"
+                  />
+                  <div className="mt-2 text-center font-serif text-[6px] md:text-[9px] font-bold uppercase tracking-widest text-white drop-shadow-[0_0_5px_rgba(255,255,255,0.5)]">
+                    Sameer Baranwal
+                  </div>
+                </div>
+
+                {/* Right Panel: Intro */}
+                <div className="relative flex flex-col justify-center w-[60%] bg-black/40 border border-white/10 rounded-lg p-3 shadow-[0_0_15px_rgba(255,255,255,0.03)] text-left">
+                  <h3 className="text-neon-green/90 font-mono text-[7px] md:text-[9px] uppercase tracking-wider mb-2 drop-shadow-[0_0_5px_rgba(0,255,0,0.4)] border-b border-white/10 pb-1 md:pb-2">
+                    UI/UX & Brand Identity Designer
+                  </h3>
+                  <p className="text-white/70 font-sans text-[7px] md:text-[10px] leading-tight md:leading-snug font-light">
+                    Minimalist aesthetic with maximalist strategy. <br/><br/>
+                    Making things pixel-perfect since 2018.
+                  </p>
+                </div>
 
                 {/* CRT Scanline overlay specific to the card for extra native feel */}
-                <div className="absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_4px,3px_100%] pointer-events-none z-50 mix-blend-screen opacity-50"></div>
+                <div className="absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_4px,3px_100%] pointer-events-none z-50 mix-blend-screen opacity-50 rounded-xl"></div>
               </div>
             </div>
           </div>
