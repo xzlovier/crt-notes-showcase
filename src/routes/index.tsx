@@ -327,15 +327,15 @@ function Index() {
             className="crt-scanlines crt-glow animate-soft-flicker absolute flex flex-col items-center justify-center bg-crt-dark"
             style={{ left: "27.5%", top: "17.5%", width: "44.5%", height: "52.5%" }}
           >
-            <div className="z-20 flex flex-col items-center justify-center h-full w-full p-2 md:p-4 pointer-events-none">
+            <div className="z-20 flex flex-col items-center justify-center h-full w-full pointer-events-none">
               
-              <div className="relative flex flex-row gap-2 md:gap-4 w-[95%] max-w-[500px] h-[85%] md:h-auto items-stretch overflow-hidden">
+              <div className="relative flex flex-row gap-2 md:gap-3 w-full h-full items-stretch overflow-hidden bg-black/20 p-2 md:p-3">
                 
                 {/* Aberration / Glow effects */}
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-transparent opacity-20 mix-blend-overlay rounded-xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-transparent opacity-20 mix-blend-overlay"></div>
                 
                 {/* Left Panel: Photo & Name */}
-                <div className="relative flex flex-col justify-center items-center w-[40%] bg-black/40 border border-white/10 rounded-lg p-2 shadow-[0_0_15px_rgba(255,255,255,0.03)]">
+                <div className="relative flex flex-col justify-center items-center w-[35%] md:w-[30%] bg-black/40 border border-white/10 rounded p-1 md:p-2 shadow-[0_0_15px_rgba(255,255,255,0.03)]">
                   <img 
                     src={profileMonitorImage} 
                     alt="Sameer Baranwal" 
@@ -347,18 +347,18 @@ function Index() {
                 </div>
 
                 {/* Right Panel: Intro */}
-                <div className="relative flex flex-col justify-center w-[60%] bg-black/40 border border-white/10 rounded-lg p-3 shadow-[0_0_15px_rgba(255,255,255,0.03)] text-left">
-                  <h3 className="text-neon-green/90 font-mono text-[7px] md:text-[9px] uppercase tracking-wider mb-2 drop-shadow-[0_0_5px_rgba(0,255,0,0.4)] border-b border-white/10 pb-1 md:pb-2">
-                    UI/UX & Brand Identity Designer
+                <div className="relative flex flex-col justify-center w-[65%] md:w-[70%] bg-black/40 border border-white/10 rounded p-2 md:p-3 shadow-[0_0_15px_rgba(255,255,255,0.03)] text-left">
+                  <h3 className="text-neon-green/90 font-mono text-[7px] md:text-[9px] uppercase tracking-wider mb-1 md:mb-2 drop-shadow-[0_0_5px_rgba(0,255,0,0.4)] border-b border-white/10 pb-1">
+                    Visual Storyteller
                   </h3>
-                  <p className="text-white/70 font-sans text-[7px] md:text-[10px] leading-tight md:leading-snug font-light">
-                    Minimalist aesthetic with maximalist strategy. <br/><br/>
-                    Making things pixel-perfect since 2018.
+                  <p className="text-white/70 font-sans text-[6.5px] md:text-[8px] lg:text-[10px] leading-tight md:leading-snug font-light">
+                    Undergraduate Student from IIT Kanpur, passionate about designing real world systems which are not just functional but tell a story in themselves.<br/><br/>
+                    I believe in the marriage of utility and art, drawing from brutalism, retro-tech, and modern minimalism to craft digital experiences that linger in the mind long after the screen goes dark. Every pixel is intentional, every interaction is a narrative.
                   </p>
                 </div>
 
                 {/* CRT Scanline overlay specific to the card for extra native feel */}
-                <div className="absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_4px,3px_100%] pointer-events-none z-50 mix-blend-screen opacity-50 rounded-xl"></div>
+                <div className="absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_4px,3px_100%] pointer-events-none z-50 mix-blend-screen opacity-50"></div>
               </div>
             </div>
           </div>
@@ -442,44 +442,48 @@ function Index() {
             )}
 
             {/* Expandable About Section (Files) */}
-            <div className={`relative z-20 grid transition-[grid-template-rows] duration-700 ease-out ${aboutOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
-              <div className="min-h-0 overflow-hidden">
-                <div className="mb-12 mt-4 flex flex-col gap-6 md:flex-row relative">
-                  {/* Photo "File" */}
-                  <div className="relative rotate-[-2deg] rounded bg-[#e8e4db] p-3 shadow-xl md:w-1/3 transition-transform hover:rotate-0">
-                     <img src={profileMonitorImage} className="aspect-square w-full object-cover grayscale opacity-80 mix-blend-multiply" alt="Portrait" />
-                     <div className="mt-3 text-center font-serif text-xs text-black/60 font-bold uppercase tracking-widest">Sameer Baranwal</div>
-                  </div>
+              <div className={`relative z-20 grid transition-[grid-template-rows] duration-700 ease-out ${aboutOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
+                <div className="min-h-0 overflow-hidden">
+                  <div className="mb-12 mt-4 flex flex-col relative w-full">
+  
+                    {/* Intro "File" */}
+                    <div className="relative rotate-[0.5deg] rounded bg-[#fdfbf7] p-6 md:p-8 shadow-xl w-full text-black transition-transform hover:rotate-0 flex flex-col">
+                       <div className="flex justify-between items-start border-b border-black/10 pb-4 mb-4">
+                          <h3 className="font-serif text-xl md:text-2xl font-bold uppercase tracking-widest text-black/80">Contact & Information</h3>
+                          <span className="font-serif text-xs text-black/40 font-mono">DOC-001</span>
+                       </div>
+                       <div className="space-y-4 font-sans text-sm md:text-base leading-relaxed text-black/70 flex-grow">
+                          <p>
+                            I am a designer and developer focused on crafting highly polished digital products, 
+                            brand systems, and client work. My approach combines retro aesthetics with modern 
+                            engineering to create memorable web experiences. I believe in building interfaces that are not just functional, but have character and tell a story.
+                          </p>
+                       </div>
+                       
+                       <div className="mt-8 border-t border-black/10 pt-6 flex flex-col sm:flex-row gap-4 sm:gap-8 font-mono text-xs md:text-sm text-black/60">
+                         <a href="mailto:sameerbaranwal.zk@gmail.com" className="flex items-center gap-2 hover:text-black hover:underline transition-all">
+                           <span className="font-bold">EMAIL:</span> sameerbaranwal.zk@gmail.com
+                         </a>
+                         <a href="https://www.behance.net/sameerbaranwal1" target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-black hover:underline transition-all">
+                           <span className="font-bold">BEHANCE:</span> sameerbaranwal1
+                         </a>
+                         <a href="tel:8005486796" className="flex items-center gap-2 hover:text-black hover:underline transition-all">
+                           <span className="font-bold">PHONE:</span> +91 8005486796
+                         </a>
+                       </div>
 
-                  {/* Intro "File" */}
-                  <div className="relative rotate-[1deg] rounded bg-[#fdfbf7] p-6 shadow-xl md:w-2/3 text-black transition-transform hover:rotate-0 flex flex-col">
-                     <div className="flex justify-between items-start border-b border-black/10 pb-4 mb-4">
-                        <h3 className="font-serif text-xl font-bold uppercase tracking-widest text-black/80">Introduction</h3>
-                        <span className="font-serif text-xs text-black/40 font-mono">DOC-001</span>
-                     </div>
-                     <div className="space-y-4 font-sans text-sm leading-relaxed text-black/70 flex-grow">
-                        <p>
-                          I am a designer and developer focused on crafting highly polished digital products, 
-                          brand systems, and client work. My approach combines retro aesthetics with modern 
-                          engineering to create memorable web experiences.
-                        </p>
-                        <p>
-                          I believe in building interfaces that are not just functional, but have character 
-                          and tell a story.
-                        </p>
-                     </div>
-                     <button 
-                       onClick={(e) => { e.stopPropagation(); setAboutOpen(false); }}
-                       className="mt-6 self-start font-serif text-xs font-bold uppercase tracking-widest text-black/40 hover:text-black/80 transition-colors"
-                     >
-                       [ Close File ]
-                     </button>
+                       <button 
+                         onClick={(e) => { e.stopPropagation(); setAboutOpen(false); }}
+                         className="mt-8 self-start font-serif text-xs font-bold uppercase tracking-widest text-black/40 hover:text-black/80 transition-colors"
+                       >
+                         [ Close File ]
+                       </button>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            {/* Folder stack (Selected Work) */}
+              {/* Folder stack (Selected Work) */}
             <div
               ref={projectsRef}
               className="relative z-20 mx-auto max-w-4xl"
