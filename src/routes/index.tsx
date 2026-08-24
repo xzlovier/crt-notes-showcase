@@ -198,19 +198,27 @@ function Index() {
         
         {/* Pixel Folders scattered in background */}
         {pixelFolders.map((pf, i) => (
-          <img
-            key={i}
-            src={pixelFolderImage}
-            alt=""
-            className={`absolute z-0 opacity-85 hover:scale-110 transition-transform cursor-default ${pf.width}`}
+          <div
+            key={`pf-${i}`}
+            className="absolute z-0 animate-float-drift"
             style={{
               left: pf.left,
               top: pf.top,
-              rotate: pf.rotate,
-              imageRendering: "pixelated",
-              filter: "drop-shadow(0 10px 15px rgba(0,0,0,0.5))"
+              animationDelay: `${i * -3.7}s`,
+              animationDuration: `${12 + (i % 3) * 4}s`
             }}
-          />
+          >
+            <img
+              src={pixelFolderImage}
+              alt=""
+              className={`opacity-85 hover:scale-110 transition-transform cursor-default ${pf.width}`}
+              style={{
+                rotate: pf.rotate,
+                imageRendering: "pixelated",
+                filter: "drop-shadow(0 10px 15px rgba(0,0,0,0.5))"
+              }}
+            />
+          </div>
         ))}
         <div className="relative z-10 mx-auto aspect-video w-full max-w-[1400px] @container" style={{ aspectRatio: "1024/571" }}>
           <img
@@ -226,13 +234,19 @@ function Index() {
             style={{ left: "27.5%", top: "17.5%", width: "44.5%", height: "52.5%" }}
           >
             <div className="z-20 flex flex-col items-center gap-1 md:gap-3 px-2 md:px-4 text-center">
-              <span className="font-serif text-[1.5cqw] md:text-[10px] lg:text-xs font-medium uppercase tracking-[0.35em] text-neon-green/80">
-                Design Portfolio
+              <span className="font-serif text-[1.5cqw] md:text-[10px] lg:text-xs font-medium uppercase tracking-[0.35em] text-white/70">
+                Selected Works
               </span>
-              <h1 className="font-serif text-[4cqw] md:text-3xl lg:text-5xl font-bold uppercase leading-[0.95] tracking-tight text-neon-green neon-glow">
-                how i ORGANIZE
+              <h1 
+                className="text-[6cqw] md:text-5xl lg:text-7xl uppercase leading-[0.9] tracking-tighter text-white/95 mix-blend-screen"
+                style={{ 
+                  fontFamily: "'Silkscreen', monospace",
+                  textShadow: "0 0 4px rgba(255,255,255,0.4)" 
+                }}
+              >
+                Portfolio
               </h1>
-              <p className="max-w-[22ch] font-sans text-[2cqw] md:text-sm lg:text-base font-light leading-snug tracking-wide text-foreground/85">
+              <p className="max-w-[22ch] font-sans text-[2cqw] md:text-sm lg:text-base font-light leading-snug tracking-wide text-white/60">
                 projects, content, client work
               </p>
             </div>
