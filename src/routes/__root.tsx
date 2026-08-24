@@ -147,9 +147,9 @@ function MobileOrientationOverlay() {
     <div 
       className={`fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-black transition-opacity duration-500 ${isPortrait ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
     >
-      {/* Neon green looping SVG representing phone rotation */}
-      <div className="text-[#39ff14] mb-8">
-         <svg className="w-24 h-24 animate-[tilt-phone_2s_ease-in-out_infinite]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ filter: "drop-shadow(0 0 8px rgba(57, 255, 20, 0.8))" }}>
+      {/* White looping SVG representing phone rotation */}
+      <div className="text-white mb-8">
+         <svg className="w-24 h-24 animate-[tilt-phone_2s_ease-in-out_infinite]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ filter: "drop-shadow(0 0 8px rgba(255, 255, 255, 0.8))" }}>
             <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
             <path d="M12 18h.01"></path>
          </svg>
