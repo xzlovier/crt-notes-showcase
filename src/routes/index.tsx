@@ -306,7 +306,7 @@ function Index() {
           </div>
         ))}
                 {/* Background Typography Mural */}
-        <div className="absolute inset-0 z-0 flex items-start justify-center pt-4 pointer-events-none mt-2 md:mt-4">
+        <div className="absolute inset-0 z-0 flex items-start justify-center pt-4 pointer-events-none mt-8 md:mt-12">
           <img 
             src={portfolioMural} 
             alt="Portfolio Typography" 
