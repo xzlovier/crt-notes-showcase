@@ -119,16 +119,6 @@ function RootShell({ children }: { children: ReactNode }) {
         <HeadContent />
       </head>
       <body>
-        <div className="orientation-overlay">
-          <svg className="device-rotate-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
-            <path d="M12 18h.01"></path>
-          </svg>
-          <h2 className="font-serif text-2xl font-bold uppercase tracking-widest text-white mb-3">Please Rotate</h2>
-          <p className="font-sans text-white/70 max-w-xs text-sm">
-            This retro experience is best viewed in landscape mode. Please rotate your device.
-          </p>
-        </div>
         {children}
         <Scripts />
       </body>
