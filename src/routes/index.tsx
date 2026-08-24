@@ -98,7 +98,7 @@ const categories: Category[] = [
     label: "Illustrations",
     color: "bg-sticky-yellow",
     tabText: "text-background",
-    position: { left: "6%", top: "9%", rotate: "-5deg" },
+    position: { left: "11%", top: "9%", rotate: "-5deg" },
     projects: [
       {
         title: "Appetite for the Dead",
