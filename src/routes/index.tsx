@@ -19,13 +19,13 @@ import pixelFolderImage from "@/assets/pixel-folder.png";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Design Portfolio — Retro CRT Workspace" },
+      { title: "Sameer Baranwal's Design Portfolio" },
       {
         name: "description",
         content:
           "A curated design portfolio organized like a retro CRT workspace: brand systems, digital products, and client work.",
       },
-      { property: "og:title", content: "Design Portfolio — Retro CRT Workspace" },
+      { property: "og:title", content: "Sameer Baranwal's Design Portfolio" },
       {
         property: "og:description",
         content:

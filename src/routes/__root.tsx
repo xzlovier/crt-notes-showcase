@@ -77,10 +77,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Design Portfolio — Retro CRT Workspace" },
+      { title: "Sameer Baranwal's Design Portfolio" },
       { name: "description", content: "A curated design portfolio organized like a retro CRT workspace." },
       { name: "author", content: "Your Name" },
-      { property: "og:title", content: "Design Portfolio — Retro CRT Workspace" },
+      { property: "og:title", content: "Sameer Baranwal's Design Portfolio" },
       { property: "og:description", content: "A curated design portfolio organized like a retro CRT workspace." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -154,7 +154,7 @@ function MobileOrientationOverlay() {
             <path d="M12 18h.01"></path>
          </svg>
       </div>
-      <p className="font-mono text-[#39ff14] text-sm tracking-widest drop-shadow-[0_0_5px_rgba(57,255,20,0.8)]">
+      <p className="font-mono text-white text-sm tracking-widest drop-shadow-[0_0_5px_rgba(255,255,255,0.8)]">
         // SYSTEM_MESSG: please_rotate_device
       </p>
     </div>
