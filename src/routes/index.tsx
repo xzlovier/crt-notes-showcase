@@ -8,6 +8,7 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 import realisticPcImage from "@/assets/realistic-pc.png";
+import profileMonitorImage from "@/assets/profile-monitor.png";
 import retroBaseImage from "@/assets/retro-base-transparent.png";
 import workBrand from "@/assets/work-brand.jpg";
 import workDigital from "@/assets/work-digital.jpg";
@@ -326,7 +327,7 @@ function Index() {
                 <div className="mb-12 mt-4 flex flex-col gap-6 md:flex-row relative">
                   {/* Photo "File" */}
                   <div className="relative rotate-[-2deg] rounded bg-[#e8e4db] p-3 shadow-xl md:w-1/3 transition-transform hover:rotate-0">
-                     <img src={realisticPcImage} className="aspect-square w-full object-cover grayscale opacity-80 mix-blend-multiply" alt="Portrait" />
+                     <img src={profileMonitorImage} className="w-full h-auto object-contain rounded" alt="Portrait" />
                      <div className="mt-3 text-center font-serif text-xs text-black/60 font-bold uppercase tracking-widest">Sameer Baranwal</div>
                   </div>
 
