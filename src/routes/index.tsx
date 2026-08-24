@@ -314,7 +314,7 @@ function Index() {
           />
         </div>
 
-        <div className="relative z-10 mx-auto aspect-video w-full max-w-[1400px] mt-[25%] md:mt-[18%] @container" style={{ aspectRatio: "1024/571" }}>
+        <div className="relative z-10 mx-auto aspect-video w-full max-w-[1400px] mt-[20%] md:mt-[12%] @container" style={{ aspectRatio: "1024/571" }}>
           <img
             src={realisticPcImage}
             alt="Retro beige CRT monitor on a clean wooden desk with colorful sticky notes"
@@ -361,7 +361,6 @@ function Index() {
                 <div className="absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_4px,3px_100%] pointer-events-none z-50 mix-blend-screen opacity-50 rounded-xl"></div>
               </div>
             </div>
-          </div>
           </div>
 
           {/* Retro Base Setup placed below the monitor screen */}
