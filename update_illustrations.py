@@ -43,3 +43,4 @@ if match:
 with open('src/routes/index.tsx', 'w', encoding='utf-8') as f:
     f.write(content)
 print("Updated successfully!")
+
