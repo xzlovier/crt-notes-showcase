@@ -53,44 +53,54 @@ type Category = {
   color: string;
   tabText: string;
   position: { left: string; top: string; rotate: string };
+  small?: boolean;
   projects: Project[];
 };
 
 const categories: Category[] = [
   {
-    id: "digital-products",
-    label: "Digital Products",
+    id: "illustrations",
+    label: "Illustrations",
     color: "bg-sticky-yellow",
     tabText: "text-background",
-    position: { left: "24.5%", top: "71%", rotate: "-3deg" },
+    position: { left: "23%", top: "12%", rotate: "-5deg" },
+    position: { left: "16%", top: "12%", rotate: "-5deg" },
+    position: { left: "16%", top: "9%", rotate: "-5deg" },
     projects: [
       {
-        title: "Lumen Dashboard",
-        description: "A data-light analytics interface for creative teams.",
+        title: "Vector Cityscape",
+        description: "Detailed vector illustration for a tech conference.",
         image: workDigital,
         year: "2025",
-        role: "Product design, design system",
-        story:
-          "Lumen strips analytics back to the few numbers a studio actually acts on. The interface leans on a dark, low-glare surface, a single accent colour for signal, and generous type sizing so the dashboard reads well on a wall screen as easily as on a laptop.",
+        role: "Lead Illustrator",
+        story: "A sweeping isometric cityscape drawn entirely in vectors. The illustration was used across large format banners and digital touchpoints."
       },
       {
-        title: "Fieldtrip App",
-        description: "Mobile travel companion focused on serendipitous discovery.",
+        title: "Character Concept Art",
+        description: "Concept art for an indie game studio.",
         image: workDigital,
         year: "2024",
-        role: "UX, interaction design",
-        story:
-          "Fieldtrip replaces itineraries with prompts. Each screen offers one nearby idea at a time, with a soft map layer underneath, encouraging people to wander instead of optimise their day.",
+        role: "Concept Artist",
+        story: "Character explorations featuring retro-futuristic themes. The focus was on expressive silhouettes and vibrant color palettes."
       },
+    ],
+  },
+  {
+    id: "creatives-posters",
+    label: "Creatives/Posters",
+    color: "bg-sticky-blue",
+    tabText: "text-white",
+    position: { left: "24%", top: "70%", rotate: "4deg" },
+    position: { left: "18%", top: "70%", rotate: "4deg" },
+    projects: [
       {
-        title: "Atelier Design System",
-        description: "A reusable component library and documentation site.",
-        image: workDigital,
-        year: "2024",
-        role: "Design systems lead",
-        story:
-          "Atelier packages tokens, components and editorial guidance into one living reference. Every component ships with usage rules written in plain language, so engineers and designers argue about product, not padding.",
-      },
+        title: "Underground Sound",
+        description: "Gig poster series for local bands.",
+        image: workBrand,
+        year: "2025",
+        role: "Graphic Designer",
+        story: "A series of gig posters relying heavily on halftone patterns, distressed textures, and bold typography to capture the raw energy of live music."
+      }
     ],
   },
   {
@@ -98,7 +108,8 @@ const categories: Category[] = [
     label: "Client Work",
     color: "bg-sticky-pink",
     tabText: "text-background",
-    position: { left: "66.5%", top: "72%", rotate: "1deg" },
+    position: { left: "66%", top: "72%", rotate: "1deg" },
+    position: { left: "61%", top: "72%", rotate: "1deg" },
     projects: [
       {
         title: "Seekho Event Merchandise",
@@ -112,11 +123,31 @@ const categories: Category[] = [
     ],
   },
   {
+    id: "editorial-design",
+    label: "Editorial Design",
+    color: "bg-sticky-yellow",
+    tabText: "text-background",
+    position: { left: "70%", top: "58%", rotate: "-6deg" },
+    position: { left: "66%", top: "58%", rotate: "-6deg" },
+    small: true,
+    projects: [
+      {
+        title: "Type Specimen Book",
+        description: "A printed book showcasing a custom typeface.",
+        image: workClient,
+        year: "2023",
+        role: "Typesetter",
+        story: "A comprehensive printed specimen exploring the history, anatomy, and practical usage of a bespoke serif typeface."
+      }
+    ],
+  },
+  {
     id: "brand-systems",
     label: "Brand Systems",
     color: "bg-sticky-blue",
     tabText: "text-white",
-    position: { left: "66%", top: "8%", rotate: "2deg" },
+    position: { left: "65%", top: "9%", rotate: "3deg" },
+    position: { left: "61%", top: "9%", rotate: "3deg" },
     projects: [
       {
         title: "Nova Studios Identity",
@@ -125,25 +156,7 @@ const categories: Category[] = [
         year: "2025",
         role: "Brand identity",
         story:
-          "Nova's wordmark is cut from a single geometric grid so it can be rebuilt at any scale, from a title card to a building sign. The system pairs it with a restrained cream-on-navy palette and one optical accent.",
-      },
-      {
-        title: "Kora Skincare",
-        description: "Minimalist packaging, palette, and editorial brand guidelines.",
-        image: workBrand,
-        year: "2024",
-        role: "Packaging, guidelines",
-        story:
-          "Kora's packaging uses uncoated stock, a tight type hierarchy and no illustration at all. The guidelines read like an editorial style guide, with rules about tone of voice sitting beside colour specs.",
-      },
-      {
-        title: "Museum of Tomorrow",
-        description: "Exhibition identity across print, digital, and environmental graphics.",
-        image: workBrand,
-        year: "2023",
-        role: "Exhibition identity",
-        story:
-          "The identity had to survive at 3cm on a ticket and 3m on a wall. A flexible arc motif carries wayfinding, signage and the exhibition catalogue, adapting weight to the surface it lives on.",
+          "Nova\'s wordmark is cut from a single geometric grid so it can be rebuilt at any scale, from a title card to a building sign. The system pairs it with a restrained cream-on-navy palette and one optical accent.",
       },
     ],
   },
@@ -261,6 +274,7 @@ function Index() {
                 top: category.position.top,
                 rotate: category.position.rotate,
                 zIndex: 10,
+                ...(category.small ? { padding: "0.75rem 0.6rem", fontSize: "0.65rem" } : {})
               }}
               aria-label={`Open ${category.label} projects`}
             >
