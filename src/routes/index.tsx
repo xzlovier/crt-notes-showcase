@@ -314,7 +314,7 @@ function Index() {
           />
         </div>
 
-        <div className="relative z-10 mx-auto aspect-video w-full max-w-[1400px] mt-[15%] md:mt-[10%] @container" style={{ aspectRatio: "1024/571" }}>
+        <div className="relative z-10 mx-auto aspect-video w-full max-w-[1400px] mt-[25%] md:mt-[18%] @container" style={{ aspectRatio: "1024/571" }}>
           <img
             src={realisticPcImage}
             alt="Retro beige CRT monitor on a clean wooden desk with colorful sticky notes"
