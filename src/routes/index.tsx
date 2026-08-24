@@ -12,6 +12,8 @@ import profileMonitorImage from "@/assets/profile-monitor.png";
 import retroBaseImage from "@/assets/retro-base-transparent.png";
 import workBrand from "@/assets/work-brand.jpg";
 import workDigital from "@/assets/work-digital.jpg";
+import illustrationSamurai from "@/assets/illustration-samurai.jpg";
+import illustrationAppetite from "@/assets/illustration-appetite.jpg";
 import workClient from "@/assets/work-client.jpg";
 import seekhoMerch from "@/assets/seekho-merch.png";
 import cursorSvg from "@/assets/cursor.svg";
@@ -67,21 +69,21 @@ const categories: Category[] = [
     position: { left: "16%", top: "9%", rotate: "-5deg" },
     projects: [
       {
-        title: "Vector Cityscape",
-        description: "Detailed vector illustration for a tech conference.",
-        image: workDigital,
-        year: "2025",
-        role: "Lead Illustrator",
-        story: "A sweeping isometric cityscape drawn entirely in vectors. The illustration was used across large format banners and digital touchpoints."
+        title: "Appetite for the Dead",
+        description: "A surreal, dreamlike landscape featuring a giant eye and scattered stone hands.",
+        image: illustrationAppetite,
+        year: "2026",
+        role: "Digital Artist",
+        story: "This pink-hued illustration explores themes of cosmic dread and monumental ruin, blending surrealist imagery with a somber, apocalyptic atmosphere."
       },
       {
-        title: "Character Concept Art",
-        description: "Concept art for an indie game studio.",
-        image: workDigital,
-        year: "2024",
-        role: "Concept Artist",
-        story: "Character explorations featuring retro-futuristic themes. The focus was on expressive silhouettes and vibrant color palettes."
-      },
+        title: "The Last Stand",
+        description: "A lone samurai facing off against a horde of masked Oni.",
+        image: illustrationSamurai,
+        year: "2026",
+        role: "Digital Artist",
+        story: "A vibrant fantasy illustration depicting an epic confrontation before a floating temple and a traditional torii gate. The focus is on the tension right before the battle begins."
+      }
     ],
   },
   {
