@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import {
   Dialog,
   DialogContent,
@@ -26,6 +26,28 @@ import editorial4 from "@/assets/editorial-4.jpg";
 import workClient from "@/assets/work-client.jpg";
 import seekhoMerch from "@/assets/seekho-merch.png";
 import cursorSvg from "@/assets/cursor.svg";
+import voirPage1 from "@/assets/brand-voir/page_01.jpg";
+import voirPage2 from "@/assets/brand-voir/page_02.jpg";
+import voirPage3 from "@/assets/brand-voir/page_03.jpg";
+import voirPage4 from "@/assets/brand-voir/page_04.jpg";
+import voirPage5 from "@/assets/brand-voir/page_05.jpg";
+import voirPage6 from "@/assets/brand-voir/page_06.jpg";
+import voirPage7 from "@/assets/brand-voir/page_07.jpg";
+import voirPage8 from "@/assets/brand-voir/page_08.jpg";
+import voirPage9 from "@/assets/brand-voir/page_09.jpg";
+import voirPage10 from "@/assets/brand-voir/page_10.jpg";
+import voirPage11 from "@/assets/brand-voir/page_11.jpg";
+import voirPage12 from "@/assets/brand-voir/page_12.jpg";
+import voirPage13 from "@/assets/brand-voir/page_13.jpg";
+import voirPage14 from "@/assets/brand-voir/page_14.jpg";
+import voirPage15 from "@/assets/brand-voir/page_15.jpg";
+import voirPage16 from "@/assets/brand-voir/page_16.jpg";
+import voirPage17 from "@/assets/brand-voir/page_17.jpg";
+import voirPage18 from "@/assets/brand-voir/page_18.jpg";
+import voirPage19 from "@/assets/brand-voir/page_19.jpg";
+import voirPage20 from "@/assets/brand-voir/page_20.jpg";
+import voirPage21 from "@/assets/brand-voir/page_21.jpg";
+const voirImages = [voirPage1, voirPage2, voirPage3, voirPage4, voirPage5, voirPage6, voirPage7, voirPage8, voirPage9, voirPage10, voirPage11, voirPage12, voirPage13, voirPage14, voirPage15, voirPage16, voirPage17, voirPage18, voirPage19, voirPage20, voirPage21];
 import pixelFolderImage from "@/assets/pixel-folder.png";
 
 export const Route = createFileRoute("/")({
@@ -53,7 +75,7 @@ export const Route = createFileRoute("/")({
 type Project = {
   title: string;
   description: string;
-  image: string;
+  image: string | string[];
   year: string;
   role: string;
   story: string;
@@ -212,14 +234,13 @@ const categories: Category[] = [
     position: { left: "65%", top: "9%", rotate: "3deg" },
     projects: [
       {
-        title: "Nova Studios Identity",
-        description: "A modular wordmark and typographic system for a film studio.",
-        image: workBrand,
-        year: "2025",
-        role: "Brand identity",
-        story:
-          "Nova\'s wordmark is cut from a single geometric grid so it can be rebuilt at any scale, from a title card to a building sign. The system pairs it with a restrained cream-on-navy palette and one optical accent.",
-      },
+        title: "VOIR - Inclusive Luxury",
+        description: "A luxury watch brand honoring Louis Braille, elevating touch into elegance.",
+        image: voirImages,
+        year: "2026",
+        role: "Brand Identity & Product Design",
+        story: "VOIR redefines timekeeping by proving that true luxury is not broadcasted visually, but felt intimately. This comprehensive brand manual covers the 'Architecture of Touch' dials, packaging, and digital app experience designed for both sighted and visually impaired users."
+      }
     ],
   },
 ];
@@ -227,6 +248,11 @@ const categories: Category[] = [
 function Index() {
   const [openFolder, setOpenFolder] = useState<string | null>(null);
   const [activeProject, setActiveProject] = useState<Project | null>(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  useEffect(() => {
+    if (activeProject) setCurrentImageIndex(0);
+  }, [activeProject]);
+  
   const [aboutOpen, setAboutOpen] = useState(true);
   const projectsRef = useRef<HTMLDivElement>(null);
 
@@ -482,7 +508,7 @@ function Index() {
                                   className="flex w-full items-center gap-4 rounded-lg border border-border bg-background p-3 text-left transition-all hover:-translate-y-0.5 hover:border-neon-green/60 hover:shadow-lg"
                                 >
                                   <img
-                                    src={project.image}
+                                    src={Array.isArray(project.image) ? project.image[0] : project.image}
                                     alt={`${project.title} artwork`}
                                     width={1024}
                                     height={768}
@@ -527,14 +553,40 @@ function Index() {
                 {activeProject.role} — {activeProject.year}
               </DialogDescription>
             </DialogHeader>
-            <img
-              src={activeProject.image}
-              alt={`${activeProject.title} full artwork`}
-              width={1024}
-              height={768}
-              loading="lazy"
-              className="mt-2 w-full rounded-lg object-cover"
-            />
+            <div className="relative mt-2">
+                {Array.isArray(activeProject.image) ? (
+                  <>
+                    <img
+                      src={activeProject.image[currentImageIndex]}
+                      alt={`${activeProject.title} slide ${currentImageIndex + 1}`}
+                      className="w-full rounded-lg object-contain aspect-video bg-black/5"
+                    />
+                    <div className="absolute bottom-2 right-2 flex gap-2">
+                      <button 
+                        className="flex items-center justify-center w-10 h-10 bg-black/80 hover:bg-black text-white rounded-full shadow-lg transition-colors disabled:opacity-50"
+                        onClick={() => setCurrentImageIndex(i => Math.max(0, i - 1))}
+                        disabled={currentImageIndex === 0}
+                      >
+                        ←
+                      </button>
+                      <button 
+                        className="flex items-center justify-center w-10 h-10 bg-black/80 hover:bg-black text-white rounded-full shadow-lg transition-colors disabled:opacity-50"
+                        onClick={() => setCurrentImageIndex(i => Math.min(activeProject.image.length - 1, i + 1))}
+                        disabled={currentImageIndex === activeProject.image.length - 1}
+                      >
+                        →
+                      </button>
+                    </div>
+                  </>
+                ) : (
+                  <img
+                    src={activeProject.image as string}
+                    alt={`${activeProject.title} full artwork`}
+                    loading="lazy"
+                    className="w-full rounded-lg object-cover"
+                  />
+                )}
+              </div>
             <p className="text-sm leading-relaxed text-muted-foreground">
               {activeProject.story}
             </p>
