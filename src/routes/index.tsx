@@ -305,21 +305,16 @@ function Index() {
             />
           </div>
         ))}
-        {/* UNIFIED HERO ASSEMBLY: Locks typography, monitor, and sticky notes together so they scale perfectly */}
-        <div className="relative mx-auto w-full max-w-[1400px] mt-8 mb-16 md:mt-12" style={{ aspectRatio: "1400/1200" }}>
-          
-          {/* Background Typography Mural attached permanently inside the Unified Wrapper */}
-          <div className="absolute left-1/2 -translate-x-1/2 top-0 w-full flex justify-center pointer-events-none z-0">
-            <img 
-              src={portfolioMural} 
-              alt="Portfolio Typography" 
-              className="w-[90%] max-w-[1000px] opacity-90 drop-shadow-2xl mix-blend-screen" 
-            />
-          </div>
+                {/* Background Typography Mural */}
+        <div className="absolute inset-0 z-0 flex items-start justify-center pt-4 pointer-events-none mt-8 md:mt-12">
+          <img 
+            src={portfolioMural} 
+            alt="Portfolio Typography" 
+            className="w-[90%] max-w-[1000px] opacity-90 drop-shadow-2xl mix-blend-screen" 
+          />
+        </div>
 
-          {/* Monitor & Sticky Notes Container */}
-          <div className="absolute left-0 top-[25%] md:top-[18%] w-full z-10" style={{ aspectRatio: "1024/571" }}>
-
+        <div className="relative z-10 mx-auto aspect-video w-full max-w-[1400px] mt-[25%] md:mt-[18%] @container" style={{ aspectRatio: "1024/571" }}>
           <img
             src={realisticPcImage}
             alt="Retro beige CRT monitor on a clean wooden desk with colorful sticky notes"
@@ -411,8 +406,6 @@ function Index() {
             Scroll to Explore
           </button>
         </div>
-      
-        </div> {/* End of Unified Wrapper */}
       </section>
 
       {/* Big Background Folder (About Me) */}
