@@ -348,10 +348,10 @@ function Index() {
 
                 {/* Right Panel: Intro */}
                 <div className="relative flex flex-col justify-center w-[65%] md:w-[70%] bg-black/40 border border-white/10 rounded p-2 md:p-3 shadow-[0_0_15px_rgba(255,255,255,0.03)] text-left">
-                  <h3 className="text-neon-green/90 font-mono text-[7px] md:text-[9px] uppercase tracking-wider mb-1 md:mb-2 drop-shadow-[0_0_5px_rgba(0,255,0,0.4)] border-b border-white/10 pb-1">
+                  <h3 className="text-neon-green/90 font-mono text-[9px] md:text-[11px] uppercase tracking-wider mb-1 md:mb-2 drop-shadow-[0_0_5px_rgba(0,255,0,0.4)] border-b border-white/10 pb-1">
                     Visual Storyteller
                   </h3>
-                  <p className="text-white/70 font-sans text-[6.5px] md:text-[8px] lg:text-[10px] leading-tight md:leading-snug font-light">
+                  <p className="text-white/70 font-sans text-[8px] md:text-[10px] lg:text-[12px] leading-tight md:leading-snug font-light">
                     Undergraduate Student from IIT Kanpur, passionate about designing real world systems which are not just functional but tell a story in themselves.<br/><br/>
                     I believe in the marriage of utility and art, drawing from brutalism, retro-tech, and modern minimalism to craft digital experiences that linger in the mind long after the screen goes dark. Every pixel is intentional, every interaction is a narrative.
                   </p>
