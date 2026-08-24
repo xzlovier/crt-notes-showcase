@@ -305,16 +305,16 @@ function Index() {
             />
           </div>
         ))}
-                {/* Background Typography Mural */}
-        <div className="absolute inset-0 z-0 flex items-start justify-center pt-4 pointer-events-none -mt-8 md:-mt-20">
-          <img 
-            src={portfolioMural} 
-            alt="Portfolio Typography" 
-            className="w-[90%] max-w-[1000px] opacity-90 drop-shadow-2xl mix-blend-screen" 
-          />
-        </div>
-
-        <div className="relative z-10 mx-auto aspect-video w-full max-w-[1400px] mt-[20%] md:mt-[12%] @container" style={{ aspectRatio: "1024/571" }}>
+        <div className="relative z-10 mx-auto aspect-video w-full max-w-[1400px] mt-24 md:mt-32 @container" style={{ aspectRatio: "1024/571" }}>
+          
+          {/* Background Typography Mural attached permanently to the CRT assembly */}
+          <div className="absolute left-1/2 -translate-x-1/2 top-[-20%] md:top-[-22%] w-[75%] z-[-1] pointer-events-none flex justify-center">
+            <img 
+              src={portfolioMural} 
+              alt="Portfolio Typography" 
+              className="w-full opacity-90 drop-shadow-2xl mix-blend-screen" 
+            />
+          </div>
           <img
             src={realisticPcImage}
             alt="Retro beige CRT monitor on a clean wooden desk with colorful sticky notes"
