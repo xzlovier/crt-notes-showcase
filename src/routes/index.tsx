@@ -279,7 +279,7 @@ function Index() {
   return (
     <main className="riso-grain min-h-screen bg-background overflow-hidden">
       {/* Hero: CRT workspace */}
-      <section className="code-texture relative flex flex-col justify-center w-full px-4 pt-12 pb-16 md:min-h-screen md:px-8 lg:px-12 lg:pb-48">
+      <section className="code-texture relative flex flex-col justify-center w-full -translate-y-[10%] px-4 pt-12 pb-16 md:min-h-screen md:px-8 lg:px-12 lg:pb-48">
         
         {/* Pixel Folders scattered in background */}
         {pixelFolders.map((pf, i) => (
@@ -306,7 +306,7 @@ function Index() {
           </div>
         ))}
                 {/* Background Typography Mural */}
-        <div className="absolute inset-0 z-0 flex items-start justify-center pt-4 pointer-events-none -mt-8 md:-mt-20">
+        <div className="absolute inset-0 z-0 flex items-start justify-center pt-4 pointer-events-none mt-2 md:mt-4">
           <img 
             src={portfolioMural} 
             alt="Portfolio Typography" 
@@ -314,7 +314,7 @@ function Index() {
           />
         </div>
 
-        <div className="relative z-10 mx-auto aspect-video w-full max-w-[1400px] mt-[20%] md:mt-[12%] @container" style={{ aspectRatio: "1024/571" }}>
+        <div className="relative z-10 mx-auto aspect-video w-full max-w-[1400px] mt-[25%] md:mt-[18%] @container" style={{ aspectRatio: "1024/571" }}>
           <img
             src={realisticPcImage}
             alt="Retro beige CRT monitor on a clean wooden desk with colorful sticky notes"
