@@ -575,7 +575,7 @@ function Index() {
         onOpenChange={() => setActiveProject(null)}
       >
         {activeProject && (
-          <DialogContent className="max-w-2xl border-border bg-card text-card-foreground">
+          <DialogContent className="max-w-2xl border-border bg-card text-card-foreground max-h-[90vh] overflow-y-auto">
             <DialogHeader>
               <DialogTitle className="font-serif text-xl font-bold uppercase tracking-tight">
                 {activeProject.title}
@@ -614,7 +614,7 @@ function Index() {
                     src={activeProject.image as string}
                     alt={`${activeProject.title} full artwork`}
                     loading="lazy"
-                    className="w-full rounded-lg object-cover"
+                    className="w-full h-auto max-h-[60vh] rounded-lg object-contain bg-black/5"
                   />
                 )}
               </div>
