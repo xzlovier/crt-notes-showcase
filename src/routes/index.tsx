@@ -581,7 +581,7 @@ function Index() {
                 {activeProject.title}
               </DialogTitle>
               <DialogDescription className="text-muted-foreground">
-                {activeProject.role} — {activeProject.year}
+                {activeProject.role} - {activeProject.year}
               </DialogDescription>
             </DialogHeader>
             <div className="relative mt-2">
