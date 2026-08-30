@@ -79,7 +79,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Sameer Baranwal's Design Portfolio" },
       { name: "description", content: "A curated design portfolio organized like a retro CRT workspace." },
-      { name: "author", content: "Your Name" },
+      { name: "author", content: "Sameer Baranwal" },
       { property: "og:title", content: "Sameer Baranwal's Design Portfolio" },
       { property: "og:description", content: "A curated design portfolio organized like a retro CRT workspace." },
       { property: "og:type", content: "website" },
